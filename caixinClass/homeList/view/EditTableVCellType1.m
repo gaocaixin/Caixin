@@ -8,8 +8,6 @@
 
 #import "EditTableVCellType1.h"
 #import "UIImageView+WebCache.h"
-#import "EditListModel.h"
-#import "EditModel.h"
 
 @interface EditTableVCellType1 ()
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
@@ -23,7 +21,7 @@
 }
 
 
-+ (instancetype)editTableVCellType1:(UITableView *)tableView
++ (instancetype)editTableVCell:(UITableView *)tableView
 {
     EditTableVCellType1 *type1 = [tableView dequeueReusableCellWithIdentifier:@"EditTableVCellType1"];
     if (type1 == nil) {
@@ -35,7 +33,8 @@
 
 - (void)setModel:(EditModel *)model
 {
-    _model = model;
+    [super setModel:model];
+    
     EditListModel *listModel = [model.listArr lastObject];
     [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:nil];
     self.titleLabel.text = listModel.title;

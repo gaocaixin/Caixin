@@ -1,5 +1,5 @@
 //
-//  EditTableVCellType1.h
+//  DescVC.h
 //  Caixin
 //
 //  Created by gaocaixin on 15/4/25.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EditTableVCellType.h"
 
-@interface EditTableVCellType1 : EditTableVCellType
+@interface DescVC : UIViewController
+
+@property (nonatomic, copy) NSString *url;
 
 @end

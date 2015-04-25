@@ -21,6 +21,7 @@
     model.time = dict[@"time"];
     model.title = dict[@"title"];
     model.web_url = dict[@"web_url"];
+    model.tag_image = dict[@"tag_image"];
     return model;
 }
 

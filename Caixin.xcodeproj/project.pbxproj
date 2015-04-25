@@ -11,6 +11,8 @@
 		BC00CA7C1AEB389800C8F419 /* EditListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00CA7B1AEB389800C8F419 /* EditListModel.m */; };
 		BC00CA801AEB440300C8F419 /* EditTableVCellType1.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00CA7E1AEB440300C8F419 /* EditTableVCellType1.m */; };
 		BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */; };
+		BC00CA851AEB6D2C00C8F419 /* EditTableVCellType3.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */; };
+		BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */; };
 		BC3D9A091AE9EF9600B8F306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9A081AE9EF9600B8F306 /* main.m */; };
 		BC3D9A0C1AE9EF9600B8F306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9A0B1AE9EF9600B8F306 /* AppDelegate.m */; };
 		BC3D9A141AE9EF9600B8F306 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3D9A131AE9EF9600B8F306 /* Images.xcassets */; };
@@ -65,6 +67,18 @@
 		BC3D9AD91AE9F48700B8F306 /* TitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9AD81AE9F48700B8F306 /* TitleModel.m */; };
 		BC3D9ADD1AEA216300B8F306 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9ADC1AEA216300B8F306 /* MyMD5.m */; };
 		BC3D9AE01AEA321700B8F306 /* TitleButten.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9ADF1AEA321700B8F306 /* TitleButten.m */; };
+		BCFDF4BA1AEB7EE700283504 /* EditTableVCellType6.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */; };
+		BCFDF4BB1AEB7EE700283504 /* EditTableVCellType6.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */; };
+		BCFDF4BE1AEB7F7C00283504 /* EditTableVCellType.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */; };
+		BCFDF4C21AEB8A9800283504 /* EditTableVCellType5.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4C01AEB8A9800283504 /* EditTableVCellType5.m */; };
+		BCFDF4C31AEB8A9800283504 /* EditTableVCellType5.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4C11AEB8A9800283504 /* EditTableVCellType5.xib */; };
+		BCFDF4C71AEB8EA300283504 /* EditTableVCellType4.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4C51AEB8EA300283504 /* EditTableVCellType4.m */; };
+		BCFDF4C81AEB8EA300283504 /* EditTableVCellType4.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4C61AEB8EA300283504 /* EditTableVCellType4.xib */; };
+		BCFDF4CC1AEB902900283504 /* EditTableVCellType2.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4CA1AEB902900283504 /* EditTableVCellType2.m */; };
+		BCFDF4CD1AEB902900283504 /* EditTableVCellType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4CB1AEB902900283504 /* EditTableVCellType2.xib */; };
+		BCFDF4D11AEB98A700283504 /* EditTableVCellType7.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4CF1AEB98A700283504 /* EditTableVCellType7.m */; };
+		BCFDF4D21AEB98A700283504 /* EditTableVCellType7.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4D01AEB98A700283504 /* EditTableVCellType7.xib */; };
+		BCFDF4D51AEBA30400283504 /* DescVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4D41AEBA30400283504 /* DescVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +99,9 @@
 		BC00CA7D1AEB440300C8F419 /* EditTableVCellType1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType1.h; sourceTree = "<group>"; };
 		BC00CA7E1AEB440300C8F419 /* EditTableVCellType1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType1.m; sourceTree = "<group>"; };
 		BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType1.xib; sourceTree = "<group>"; };
+		BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType3.h; sourceTree = "<group>"; };
+		BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType3.m; sourceTree = "<group>"; };
+		BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType3.xib; sourceTree = "<group>"; };
 		BC3D9A031AE9EF9600B8F306 /* Caixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3D9A071AE9EF9600B8F306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3D9A081AE9EF9600B8F306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -197,6 +214,25 @@
 		BC3D9ADC1AEA216300B8F306 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BC3D9ADE1AEA321700B8F306 /* TitleButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButten.h; sourceTree = "<group>"; };
 		BC3D9ADF1AEA321700B8F306 /* TitleButten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButten.m; sourceTree = "<group>"; };
+		BCFDF4B71AEB7EE700283504 /* EditTableVCellType6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType6.h; sourceTree = "<group>"; };
+		BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType6.m; sourceTree = "<group>"; };
+		BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType6.xib; sourceTree = "<group>"; };
+		BCFDF4BC1AEB7F7C00283504 /* EditTableVCellType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType.h; sourceTree = "<group>"; };
+		BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType.m; sourceTree = "<group>"; };
+		BCFDF4BF1AEB8A9800283504 /* EditTableVCellType5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType5.h; sourceTree = "<group>"; };
+		BCFDF4C01AEB8A9800283504 /* EditTableVCellType5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType5.m; sourceTree = "<group>"; };
+		BCFDF4C11AEB8A9800283504 /* EditTableVCellType5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType5.xib; sourceTree = "<group>"; };
+		BCFDF4C41AEB8EA300283504 /* EditTableVCellType4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType4.h; sourceTree = "<group>"; };
+		BCFDF4C51AEB8EA300283504 /* EditTableVCellType4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType4.m; sourceTree = "<group>"; };
+		BCFDF4C61AEB8EA300283504 /* EditTableVCellType4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType4.xib; sourceTree = "<group>"; };
+		BCFDF4C91AEB902900283504 /* EditTableVCellType2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType2.h; sourceTree = "<group>"; };
+		BCFDF4CA1AEB902900283504 /* EditTableVCellType2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType2.m; sourceTree = "<group>"; };
+		BCFDF4CB1AEB902900283504 /* EditTableVCellType2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType2.xib; sourceTree = "<group>"; };
+		BCFDF4CE1AEB98A700283504 /* EditTableVCellType7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType7.h; sourceTree = "<group>"; };
+		BCFDF4CF1AEB98A700283504 /* EditTableVCellType7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType7.m; sourceTree = "<group>"; };
+		BCFDF4D01AEB98A700283504 /* EditTableVCellType7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType7.xib; sourceTree = "<group>"; };
+		BCFDF4D31AEBA30400283504 /* DescVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescVC.h; sourceTree = "<group>"; };
+		BCFDF4D41AEBA30400283504 /* DescVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +368,8 @@
 			children = (
 				BC3D9AD41AE9F0AF00B8F306 /* HomeViewC.h */,
 				BC3D9AD51AE9F0AF00B8F306 /* HomeViewC.m */,
+				BCFDF4D31AEBA30400283504 /* DescVC.h */,
+				BCFDF4D41AEBA30400283504 /* DescVC.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -354,6 +392,26 @@
 			children = (
 				BC3D9ADE1AEA321700B8F306 /* TitleButten.h */,
 				BC3D9ADF1AEA321700B8F306 /* TitleButten.m */,
+				BCFDF4CE1AEB98A700283504 /* EditTableVCellType7.h */,
+				BCFDF4CF1AEB98A700283504 /* EditTableVCellType7.m */,
+				BCFDF4D01AEB98A700283504 /* EditTableVCellType7.xib */,
+				BCFDF4C91AEB902900283504 /* EditTableVCellType2.h */,
+				BCFDF4CA1AEB902900283504 /* EditTableVCellType2.m */,
+				BCFDF4CB1AEB902900283504 /* EditTableVCellType2.xib */,
+				BCFDF4C41AEB8EA300283504 /* EditTableVCellType4.h */,
+				BCFDF4C51AEB8EA300283504 /* EditTableVCellType4.m */,
+				BCFDF4C61AEB8EA300283504 /* EditTableVCellType4.xib */,
+				BCFDF4BF1AEB8A9800283504 /* EditTableVCellType5.h */,
+				BCFDF4C01AEB8A9800283504 /* EditTableVCellType5.m */,
+				BCFDF4C11AEB8A9800283504 /* EditTableVCellType5.xib */,
+				BCFDF4BC1AEB7F7C00283504 /* EditTableVCellType.h */,
+				BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */,
+				BCFDF4B71AEB7EE700283504 /* EditTableVCellType6.h */,
+				BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */,
+				BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */,
+				BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */,
+				BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */,
+				BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */,
 				BC00CA7D1AEB440300C8F419 /* EditTableVCellType1.h */,
 				BC00CA7E1AEB440300C8F419 /* EditTableVCellType1.m */,
 				BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */,
@@ -686,8 +744,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFDF4BB1AEB7EE700283504 /* EditTableVCellType6.xib in Resources */,
 				BC3D9A141AE9EF9600B8F306 /* Images.xcassets in Resources */,
+				BCFDF4C81AEB8EA300283504 /* EditTableVCellType4.xib in Resources */,
+				BCFDF4D21AEB98A700283504 /* EditTableVCellType7.xib in Resources */,
+				BCFDF4CD1AEB902900283504 /* EditTableVCellType2.xib in Resources */,
+				BCFDF4C31AEB8A9800283504 /* EditTableVCellType5.xib in Resources */,
 				BC3D9AB01AE9F04000B8F306 /* MBProgressHUD.bundle in Resources */,
+				BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */,
 				BC3D9ABB1AE9F04000B8F306 /* MJRefresh.bundle in Resources */,
 				BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */,
 			);
@@ -708,10 +772,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3D9ACA1AE9F04000B8F306 /* UIImage+GIF.m in Sources */,
+				BC00CA851AEB6D2C00C8F419 /* EditTableVCellType3.m in Sources */,
 				BC3D9ABD1AE9F04000B8F306 /* MJRefreshConst.m in Sources */,
+				BCFDF4D51AEBA30400283504 /* DescVC.m in Sources */,
 				BC3D9AA41AE9F04000B8F306 /* AFHTTPRequestOperation.m in Sources */,
 				BC3D9ABF1AE9F04000B8F306 /* MJRefreshHeaderView.m in Sources */,
 				BC3D9ACF1AE9F04000B8F306 /* UIView+WebCacheOperation.m in Sources */,
+				BCFDF4CC1AEB902900283504 /* EditTableVCellType2.m in Sources */,
+				BCFDF4C71AEB8EA300283504 /* EditTableVCellType4.m in Sources */,
 				BC3D9AB91AE9F04000B8F306 /* NSObject+MJKeyValue.m in Sources */,
 				BC3D9AB21AE9F04000B8F306 /* MJArgument.m in Sources */,
 				BC3D9A0C1AE9EF9600B8F306 /* AppDelegate.m in Sources */,
@@ -727,6 +795,7 @@
 				BC3D9AD61AE9F0AF00B8F306 /* HomeViewC.m in Sources */,
 				BC3D9ADD1AEA216300B8F306 /* MyMD5.m in Sources */,
 				BC3D9AC51AE9F04000B8F306 /* SDWebImageDownloader.m in Sources */,
+				BCFDF4BE1AEB7F7C00283504 /* EditTableVCellType.m in Sources */,
 				BC3D9AC11AE9F04000B8F306 /* NSData+ImageContentType.m in Sources */,
 				BC3D9AAF1AE9F04000B8F306 /* MBProgressHUD+MJ.m in Sources */,
 				BC3D9AB71AE9F04000B8F306 /* MJTypeEncoding.m in Sources */,
@@ -740,6 +809,7 @@
 				BC3D9AB51AE9F04000B8F306 /* MJMethod.m in Sources */,
 				BC3D9AB11AE9F04000B8F306 /* MBProgressHUD.m in Sources */,
 				BC00CA791AEB366600C8F419 /* EditModel.m in Sources */,
+				BCFDF4D11AEB98A700283504 /* EditTableVCellType7.m in Sources */,
 				BC3D9AA91AE9F04000B8F306 /* AFSecurityPolicy.m in Sources */,
 				BC3D9AB31AE9F04000B8F306 /* MJIvar.m in Sources */,
 				BC3D9AC01AE9F04000B8F306 /* MKAnnotationView+WebCache.m in Sources */,
@@ -748,9 +818,11 @@
 				BC3D9AA81AE9F04000B8F306 /* AFNTool.m in Sources */,
 				BC3D9AAE1AE9F04000B8F306 /* GXCycleScrollView.m in Sources */,
 				BC3D9AD31AE9F07900B8F306 /* MainNavC.m in Sources */,
+				BCFDF4C21AEB8A9800283504 /* EditTableVCellType5.m in Sources */,
 				BC3D9ACB1AE9F04000B8F306 /* UIImage+MultiFormat.m in Sources */,
 				BC00CA7C1AEB389800C8F419 /* EditListModel.m in Sources */,
 				BC3D9ACC1AE9F04000B8F306 /* UIImage+WebP.m in Sources */,
+				BCFDF4BA1AEB7EE700283504 /* EditTableVCellType6.m in Sources */,
 				BC3D9AC91AE9F04000B8F306 /* UIButton+WebCache.m in Sources */,
 				BC3D9AAB1AE9F04000B8F306 /* AFURLRequestSerialization.m in Sources */,
 				BC3D9AD91AE9F48700B8F306 /* TitleModel.m in Sources */,

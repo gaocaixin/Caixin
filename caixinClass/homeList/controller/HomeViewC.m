@@ -13,7 +13,13 @@
 #import "EditListModel.h"
 #import "EditModel.h"
 #import "EditTableVCellType1.h"
-
+#import "EditTableVCellType2.h"
+#import "EditTableVCellType3.h"
+#import "EditTableVCellType4.h"
+#import "EditTableVCellType5.h"
+#import "EditTableVCellType6.h"
+#import "EditTableVCellType7.h"
+#import "DescVC.h"
 
 #define CHANNLE_BTN_INTERVAL 10
 #define TITLEVIEW_HEIGHT 30
@@ -119,6 +125,9 @@
     tableView.tag = tag;
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.sectionFooterHeight = 0;
+    tableView.sectionHeaderHeight = 0;
     [self.listScrollView addSubview:tableView];
     [self.tabelViewArray addObject:tableView];
     // 给tableview增加一个数据源
@@ -150,12 +159,53 @@
         switch ([model.type intValue]) {
             case 1:
             {
-                EditTableVCellType1 *cell = [EditTableVCellType1 editTableVCellType1:tableView];
+                EditTableVCellType1 *cell = [EditTableVCellType1 editTableVCell:tableView];
                 cell.model = model;
                 return cell;
             }
                 break;
-                
+            case 2:
+            {
+                EditTableVCellType2 *cell = [EditTableVCellType2 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
+            case 3:
+            {
+                EditTableVCellType3 *cell = [EditTableVCellType3 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
+            case 4:
+            {
+                EditTableVCellType4 *cell = [EditTableVCellType4 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
+            case 5:
+            {
+                EditTableVCellType5 *cell = [EditTableVCellType5 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
+            case 6:
+            {
+                EditTableVCellType6 *cell = [EditTableVCellType6 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
+            case 7:
+            {
+                EditTableVCellType7 *cell = [EditTableVCellType7 editTableVCell:tableView];
+                cell.model = model;
+                return cell;
+            }
+                break;
             default:
                 break;
         }
@@ -168,7 +218,67 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 编辑精选
+    if (tableView == self.tabelViewArray[0]) {
+        EditModel *model = self.tableViewDataArray[0][indexPath.row];
+        switch ([model.type intValue]) {
+            case 1:
+            {
+                return 180;
+            }
+                break;
+            case 2:
+            {
+                return 80;
+            }
+                break;
+            case 3:
+            {
+                return 80;
+            }
+                break;
+            case 4:
+            {
+                return 80;
+            }
+                break;
+                
+            case 5:
+            {
+                return 80;
+            }
+                break;
+            case 6:
+            {
+                return 80;
+            }
+                break;
+            case 7:
+            {
+                return 80;
+            }
+                break;
+            default:
+                break;
+        }
+    }
+    return 100;
+}
 
+#pragma mark - tableView代理方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.tabelViewArray[0]) {
+        EditModel *model = self.tableViewDataArray[0][indexPath.row];
+        EditListModel *listModel = [model.listArr lastObject];
+        NSString *url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
+        DescVC *desc =  [[DescVC alloc] init];
+        desc.url = url;
+        [self.navigationController pushViewController:desc animated:YES];
+    }
+}
 
 #pragma mark - 频道栏
 

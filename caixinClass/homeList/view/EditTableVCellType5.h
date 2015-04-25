@@ -1,5 +1,5 @@
 //
-//  EditTableVCellType1.h
+//  EditTableVCellType5.h
 //  Caixin
 //
 //  Created by gaocaixin on 15/4/25.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "EditTableVCellType.h"
 
-@interface EditTableVCellType1 : EditTableVCellType
+@interface EditTableVCellType5 : EditTableVCellType
 
 @end
