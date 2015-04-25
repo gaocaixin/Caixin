@@ -31,19 +31,19 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-NU-trE">
+                        <rect key="frame" x="10" y="5" width="55" height="55"/>
+                    </imageView>
                     <view alpha="0.20000000298023224" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lve-bJ-5Rc">
                         <rect key="frame" x="0.0" y="79" width="320" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfh-Bb-oCl">
-                        <rect key="frame" x="10" y="63" width="55" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="7" y="63" width="60" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-NU-trE">
-                        <rect key="frame" x="10" y="5" width="55" height="55"/>
-                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -53,7 +53,7 @@
                 <outlet property="nameLabel" destination="tfh-Bb-oCl" id="Saa-bw-QAK"/>
                 <outlet property="titleLabel" destination="m1k-pY-zsL" id="IQw-QC-lbf"/>
             </connections>
-            <point key="canvasLocation" x="321" y="247"/>
+            <point key="canvasLocation" x="321" y="245"/>
         </tableViewCell>
     </objects>
     <resources>

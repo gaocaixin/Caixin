@@ -11,6 +11,7 @@
 @interface EditTableVCellType4 ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -34,5 +35,16 @@
     self.commentLabel.text = leftListModel.comment;
     
 }
+
+
+- (void)setSubscribeListModel:(SubscribeListModel *)subscribeListModel
+{
+    [super setSubscribeListModel:subscribeListModel];
+    
+    self.timeLabel.text = subscribeListModel.create_time;
+    self.commentLabel.text = subscribeListModel.comment_count;
+    self.titleLabel.text = subscribeListModel.title;
+}
+
 
 @end

@@ -21,10 +21,8 @@
     // Configure the view for the selected state
 }
 
-- (void)setModel:(EditModel *)model
-{
-    _model = model;
-}
+
+
 
 
 @end

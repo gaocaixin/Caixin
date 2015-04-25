@@ -19,10 +19,19 @@
 #import "EditTableVCellType5.h"
 #import "EditTableVCellType6.h"
 #import "EditTableVCellType7.h"
+#import "EditTableVCellType8.h"
 #import "DescVC.h"
+#import "SubscribeModel.h"
+#import "SubscribeListModel.h"
+#import "SubHeaderSectionView.h"
 
 #define CHANNLE_BTN_INTERVAL 10
 #define TITLEVIEW_HEIGHT 30
+
+#define TITLE_EDIT @"编辑精选"
+
+#define TITLE_SUBSCRIBE @"我的订阅"
+#define TITLE_LAEST @"最新文章"
 
 @interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -125,9 +134,9 @@
     tableView.tag = tag;
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.sectionFooterHeight = 0;
     tableView.sectionHeaderHeight = 0;
+    tableView.sectionFooterHeight = 0;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.listScrollView addSubview:tableView];
     [self.tabelViewArray addObject:tableView];
     // 给tableview增加一个数据源
@@ -143,19 +152,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    
-    return 1;
+    return [self.tableViewDataArray[tableView.tag] count];
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tableViewDataArray[tableView.tag] count];
-//    return 1;
+    if (tableView == self.tabelViewArray[1]) {
+        return 2;
+    }
+    return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 编辑精选
     if (tableView == self.tabelViewArray[0]) {
-        EditModel *model = self.tableViewDataArray[0][indexPath.row];
+        EditModel *model = self.tableViewDataArray[0][indexPath.section];
         switch ([model.type intValue]) {
             case 1:
             {
@@ -210,6 +221,42 @@
                 break;
         }
     }
+    // 我的订阅
+    else if (tableView == self.tabelViewArray[1]) {
+        SubscribeModel *model = self.tableViewDataArray[1][indexPath.section];
+        SubscribeListModel *listModel = model.listArr[indexPath.row];
+        // 根据数据返回模型
+        if (listModel.author_img_url.length > 0) {
+            EditTableVCellType8 *cell = [EditTableVCellType8 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        } else if (listModel.picture_url.length > 0) {
+            EditTableVCellType6 *cell = [EditTableVCellType6 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        } else {
+            EditTableVCellType4 *cell = [EditTableVCellType4 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        }
+    }
+    else if (tableView == self.tabelViewArray[2]) {
+        SubscribeListModel *listModel = self.tableViewDataArray[2][indexPath.section];
+        // 根据数据返回模型
+        if (listModel.author_img_url.length > 0) {
+            EditTableVCellType8 *cell = [EditTableVCellType8 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        } else if (listModel.picture_url.length > 0) {
+            EditTableVCellType6 *cell = [EditTableVCellType6 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        } else {
+            EditTableVCellType4 *cell = [EditTableVCellType4 editTableVCell:tableView];
+            cell.subscribeListModel = listModel;
+            return cell;
+        }
+    }
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
@@ -218,68 +265,75 @@
     return cell;
 }
 
+#pragma mark - tableView代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 编辑精选
     if (tableView == self.tabelViewArray[0]) {
-        EditModel *model = self.tableViewDataArray[0][indexPath.row];
+        EditModel *model = self.tableViewDataArray[0][indexPath.section];
         switch ([model.type intValue]) {
             case 1:
-            {
                 return 180;
-            }
-                break;
-            case 2:
-            {
-                return 80;
-            }
-                break;
-            case 3:
-            {
-                return 80;
-            }
-                break;
-            case 4:
-            {
-                return 80;
-            }
-                break;
-                
-            case 5:
-            {
-                return 80;
-            }
-                break;
-            case 6:
-            {
-                return 80;
-            }
-                break;
-            case 7:
-            {
-                return 80;
-            }
                 break;
             default:
+                return 80;
                 break;
         }
     }
-    return 100;
+    return 80;
 }
-
-#pragma mark - tableView代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (tableView == self.tabelViewArray[1]) {
+        return 30;
+    }
+    return 0.0;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (tableView == self.tabelViewArray[1]) {
+        return 8;
+    }
+    return 0.0;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (tableView == self.tabelViewArray[1]) {
+        SubHeaderSectionView *view = [SubHeaderSectionView subHeaderSectionView];
+        view.model = self.tableViewDataArray[1][section];
+        return view;
+    }
+    return nil;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.tabelViewArray[0]) {
-        EditModel *model = self.tableViewDataArray[0][indexPath.row];
+        EditModel *model = self.tableViewDataArray[0][indexPath.section];
         EditListModel *listModel = [model.listArr lastObject];
         NSString *url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
         DescVC *desc =  [[DescVC alloc] init];
         desc.url = url;
         [self.navigationController pushViewController:desc animated:YES];
     }
+    else if (tableView == self.tabelViewArray[1]) {
+        SubscribeModel *model = self.tableViewDataArray[1][indexPath.section];
+        SubscribeListModel *listModel = model.listArr[indexPath.row];
+        if (listModel.web_article_url.length > 0) {
+            DescVC *desc =  [[DescVC alloc] init];
+            desc.url = listModel.web_article_url;
+            [self.navigationController pushViewController:desc animated:YES];
+        }
+    }
+    else if (tableView == self.tabelViewArray[2]) {
+        SubscribeListModel *listModel = self.tableViewDataArray[2][indexPath.section];
+        if (listModel.web_article_url.length > 0) {
+            DescVC *desc =  [[DescVC alloc] init];
+            desc.url = listModel.web_article_url;
+            [self.navigationController pushViewController:desc animated:YES];
+        }
+        
 }
-
+}
 #pragma mark - 频道栏
 
 // 定制频道滚动视图
@@ -300,7 +354,7 @@
     self.titleScrollView = scrollView;
     
     // 添加模块
-    NSArray *array = @[@"编辑精选" ,@"我的订阅", @"最新文章"];
+    NSArray *array = @[TITLE_EDIT ,TITLE_SUBSCRIBE, TITLE_LAEST];
     // 前三个btn的url
     NSArray *urlStrArr = @[@"http://mappv4.caixin.com/index_page_v4/index_page_1.json", @"http://mappv4.caixin.com/subscribe_article_list/index.json", @"http://mappv4.caixin.com/channel/list_lastnew_20_1.json"];
     for (int i = 0; i < array.count; i++) {
@@ -435,22 +489,32 @@
     NSLog(@"%@", btn.titleLabel.text);
     // 解析数据
     [RequestTool requestWithURL:btn.requestUrl Success:^(id responseObject) {
-        if ([btn.titleLabel.text isEqualToString:@"编辑精选"]) {
+        // 数据转模型
+        NSArray *array = responseObject[@"data"];
+        NSMutableArray *arrM = [NSMutableArray array];
+    
+        // 数据转模型
+        for (NSDictionary *dict in array) {
             
-            // 数据转模型
-            NSArray *array = responseObject[@"data"];
-            NSMutableArray *arrM = [NSMutableArray array];
-            for (NSDictionary *dict in array) {
+            if (btn == self.titleBtnArray[0]) {
                 EditModel *model = [EditModel modelWithDict:dict];
                 [arrM addObject:model];
+                
+            } else if (btn == self.titleBtnArray[1]) {
+            SubscribeModel *model = [SubscribeModel modelWithDict:dict];
+            [arrM addObject:model];
+            } else if (btn == self.titleBtnArray[2]) {
+                SubscribeListModel *model = [SubscribeListModel modelWithDict:dict];
+                [arrM addObject:model];
             }
-            [self.tableViewDataArray[btn.tag] addObjectsFromArray:arrM];
-            
-            // 刷新tableview
-            UITableView *tableView = self.tabelViewArray[btn.tag];
-            [tableView reloadData];
         }
-    } failure:^(NSError *error) {
+        
+        [self.tableViewDataArray[btn.tag] addObjectsFromArray:arrM];
+        // 刷新tableview
+        UITableView *tableView = self.tabelViewArray[btn.tag];
+        [tableView reloadData];
+        
+    }failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
 }

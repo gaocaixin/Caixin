@@ -22,6 +22,7 @@
 - (void)awakeFromNib
 {
     self.leftImageView.layer.cornerRadius = CGW(self.leftImageView)/2;
+    self.leftImageView.layer.masksToBounds = YES;
     
 }
 

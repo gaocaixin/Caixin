@@ -13,14 +13,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8U-Te-nCi">
-                        <rect key="frame" x="152" y="21" width="23" height="38"/>
-                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anb-dN-pky">
-                        <rect key="frame" x="0.0" y="0.0" width="142" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPF-W0-zBd">
-                        <rect key="frame" x="185" y="1" width="125" height="80"/>
+                        <rect key="frame" x="159" y="0.0" width="151" height="80"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -38,6 +35,9 @@
                         <rect key="frame" x="0.0" y="79" width="320" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8U-Te-nCi">
+                        <rect key="frame" x="128" y="22" width="23" height="38"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -46,7 +46,7 @@
                 <outlet property="leftImageView" destination="anb-dN-pky" id="EwO-LQ-DKQ"/>
                 <outlet property="titleLabel" destination="kPF-W0-zBd" id="U6J-dX-fXF"/>
             </connections>
-            <point key="canvasLocation" x="153" y="204"/>
+            <point key="canvasLocation" x="153" y="173"/>
         </tableViewCell>
     </objects>
     <resources>

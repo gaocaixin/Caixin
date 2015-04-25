@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -36,6 +37,16 @@
     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
     self.titleLabel.text = listModel.title;
     self.commentLabel.text = listModel.comment;
+}
+
+- (void)setSubscribeListModel:(SubscribeListModel *)subscribeListModel
+{
+    [super setSubscribeListModel:subscribeListModel];
+    
+    self.timeLabel.text = subscribeListModel.create_time;
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:subscribeListModel.picture_url] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    self.commentLabel.text = subscribeListModel.comment_count;
+    self.titleLabel.text = subscribeListModel.title;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EditModel.h"
 #import "EditListModel.h"
+#import "SubscribeListModel.h"
 
 @interface EditTableVCellType : UITableViewCell
 
@@ -16,5 +17,7 @@
 + (instancetype)editTableVCell:(UITableView *)tableView;
 
 @property (nonatomic ,strong) EditModel *model;
+
+@property (nonatomic ,strong) SubscribeListModel *subscribeListModel;
 
 @end

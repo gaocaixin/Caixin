@@ -13,6 +13,12 @@
 		BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */; };
 		BC00CA851AEB6D2C00C8F419 /* EditTableVCellType3.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */; };
 		BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */; };
+		BC390DAC1AEBA92B0042348A /* SubscribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DAB1AEBA92B0042348A /* SubscribeModel.m */; };
+		BC390DAF1AEBA9D00042348A /* SubscribeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DAE1AEBA9D00042348A /* SubscribeListModel.m */; };
+		BC390DB31AEBC5B00042348A /* EditTableVCellType8.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DB11AEBC5B00042348A /* EditTableVCellType8.m */; };
+		BC390DB41AEBC5B00042348A /* EditTableVCellType8.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC390DB21AEBC5B00042348A /* EditTableVCellType8.xib */; };
+		BC390DB71AEBCD6F0042348A /* SubHeaderSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DB61AEBCD6F0042348A /* SubHeaderSectionView.m */; };
+		BC390DB91AEBCD830042348A /* SubHeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC390DB81AEBCD830042348A /* SubHeaderSectionView.xib */; };
 		BC3D9A091AE9EF9600B8F306 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9A081AE9EF9600B8F306 /* main.m */; };
 		BC3D9A0C1AE9EF9600B8F306 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9A0B1AE9EF9600B8F306 /* AppDelegate.m */; };
 		BC3D9A141AE9EF9600B8F306 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3D9A131AE9EF9600B8F306 /* Images.xcassets */; };
@@ -102,6 +108,16 @@
 		BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType3.h; sourceTree = "<group>"; };
 		BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType3.m; sourceTree = "<group>"; };
 		BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType3.xib; sourceTree = "<group>"; };
+		BC390DAA1AEBA92B0042348A /* SubscribeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeModel.h; sourceTree = "<group>"; };
+		BC390DAB1AEBA92B0042348A /* SubscribeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeModel.m; sourceTree = "<group>"; };
+		BC390DAD1AEBA9D00042348A /* SubscribeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeListModel.h; sourceTree = "<group>"; };
+		BC390DAE1AEBA9D00042348A /* SubscribeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeListModel.m; sourceTree = "<group>"; };
+		BC390DB01AEBC5B00042348A /* EditTableVCellType8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType8.h; sourceTree = "<group>"; };
+		BC390DB11AEBC5B00042348A /* EditTableVCellType8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType8.m; sourceTree = "<group>"; };
+		BC390DB21AEBC5B00042348A /* EditTableVCellType8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType8.xib; sourceTree = "<group>"; };
+		BC390DB51AEBCD6F0042348A /* SubHeaderSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubHeaderSectionView.h; sourceTree = "<group>"; };
+		BC390DB61AEBCD6F0042348A /* SubHeaderSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubHeaderSectionView.m; sourceTree = "<group>"; };
+		BC390DB81AEBCD830042348A /* SubHeaderSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubHeaderSectionView.xib; sourceTree = "<group>"; };
 		BC3D9A031AE9EF9600B8F306 /* Caixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3D9A071AE9EF9600B8F306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3D9A081AE9EF9600B8F306 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -383,6 +399,10 @@
 				BC00CA781AEB366600C8F419 /* EditModel.m */,
 				BC00CA7A1AEB389800C8F419 /* EditListModel.h */,
 				BC00CA7B1AEB389800C8F419 /* EditListModel.m */,
+				BC390DAA1AEBA92B0042348A /* SubscribeModel.h */,
+				BC390DAB1AEBA92B0042348A /* SubscribeModel.m */,
+				BC390DAD1AEBA9D00042348A /* SubscribeListModel.h */,
+				BC390DAE1AEBA9D00042348A /* SubscribeListModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -392,29 +412,35 @@
 			children = (
 				BC3D9ADE1AEA321700B8F306 /* TitleButten.h */,
 				BC3D9ADF1AEA321700B8F306 /* TitleButten.m */,
-				BCFDF4CE1AEB98A700283504 /* EditTableVCellType7.h */,
-				BCFDF4CF1AEB98A700283504 /* EditTableVCellType7.m */,
-				BCFDF4D01AEB98A700283504 /* EditTableVCellType7.xib */,
+				BCFDF4BC1AEB7F7C00283504 /* EditTableVCellType.h */,
+				BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */,
+				BC00CA7D1AEB440300C8F419 /* EditTableVCellType1.h */,
+				BC00CA7E1AEB440300C8F419 /* EditTableVCellType1.m */,
+				BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */,
 				BCFDF4C91AEB902900283504 /* EditTableVCellType2.h */,
 				BCFDF4CA1AEB902900283504 /* EditTableVCellType2.m */,
 				BCFDF4CB1AEB902900283504 /* EditTableVCellType2.xib */,
+				BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */,
+				BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */,
+				BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */,
 				BCFDF4C41AEB8EA300283504 /* EditTableVCellType4.h */,
 				BCFDF4C51AEB8EA300283504 /* EditTableVCellType4.m */,
 				BCFDF4C61AEB8EA300283504 /* EditTableVCellType4.xib */,
 				BCFDF4BF1AEB8A9800283504 /* EditTableVCellType5.h */,
 				BCFDF4C01AEB8A9800283504 /* EditTableVCellType5.m */,
 				BCFDF4C11AEB8A9800283504 /* EditTableVCellType5.xib */,
-				BCFDF4BC1AEB7F7C00283504 /* EditTableVCellType.h */,
-				BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */,
 				BCFDF4B71AEB7EE700283504 /* EditTableVCellType6.h */,
 				BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */,
 				BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */,
-				BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */,
-				BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */,
-				BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */,
-				BC00CA7D1AEB440300C8F419 /* EditTableVCellType1.h */,
-				BC00CA7E1AEB440300C8F419 /* EditTableVCellType1.m */,
-				BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */,
+				BCFDF4CE1AEB98A700283504 /* EditTableVCellType7.h */,
+				BCFDF4CF1AEB98A700283504 /* EditTableVCellType7.m */,
+				BCFDF4D01AEB98A700283504 /* EditTableVCellType7.xib */,
+				BC390DB01AEBC5B00042348A /* EditTableVCellType8.h */,
+				BC390DB11AEBC5B00042348A /* EditTableVCellType8.m */,
+				BC390DB21AEBC5B00042348A /* EditTableVCellType8.xib */,
+				BC390DB51AEBCD6F0042348A /* SubHeaderSectionView.h */,
+				BC390DB61AEBCD6F0042348A /* SubHeaderSectionView.m */,
+				BC390DB81AEBCD830042348A /* SubHeaderSectionView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -748,10 +774,12 @@
 				BC3D9A141AE9EF9600B8F306 /* Images.xcassets in Resources */,
 				BCFDF4C81AEB8EA300283504 /* EditTableVCellType4.xib in Resources */,
 				BCFDF4D21AEB98A700283504 /* EditTableVCellType7.xib in Resources */,
+				BC390DB91AEBCD830042348A /* SubHeaderSectionView.xib in Resources */,
 				BCFDF4CD1AEB902900283504 /* EditTableVCellType2.xib in Resources */,
 				BCFDF4C31AEB8A9800283504 /* EditTableVCellType5.xib in Resources */,
 				BC3D9AB01AE9F04000B8F306 /* MBProgressHUD.bundle in Resources */,
 				BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */,
+				BC390DB41AEBC5B00042348A /* EditTableVCellType8.xib in Resources */,
 				BC3D9ABB1AE9F04000B8F306 /* MJRefresh.bundle in Resources */,
 				BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */,
 			);
@@ -785,6 +813,7 @@
 				BC3D9A0C1AE9EF9600B8F306 /* AppDelegate.m in Sources */,
 				BC3D9AA61AE9F04000B8F306 /* AFHTTPSessionManager.m in Sources */,
 				BC3D9AC21AE9F04000B8F306 /* SDImageCache.m in Sources */,
+				BC390DB31AEBC5B00042348A /* EditTableVCellType8.m in Sources */,
 				BC3D9AB41AE9F04000B8F306 /* MJMember.m in Sources */,
 				BC3D9AC31AE9F04000B8F306 /* SDWebImageCompat.m in Sources */,
 				BC3D9AA51AE9F04000B8F306 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -808,15 +837,18 @@
 				BC3D9AC71AE9F04000B8F306 /* SDWebImageManager.m in Sources */,
 				BC3D9AB51AE9F04000B8F306 /* MJMethod.m in Sources */,
 				BC3D9AB11AE9F04000B8F306 /* MBProgressHUD.m in Sources */,
+				BC390DAF1AEBA9D00042348A /* SubscribeListModel.m in Sources */,
 				BC00CA791AEB366600C8F419 /* EditModel.m in Sources */,
 				BCFDF4D11AEB98A700283504 /* EditTableVCellType7.m in Sources */,
 				BC3D9AA91AE9F04000B8F306 /* AFSecurityPolicy.m in Sources */,
 				BC3D9AB31AE9F04000B8F306 /* MJIvar.m in Sources */,
+				BC390DB71AEBCD6F0042348A /* SubHeaderSectionView.m in Sources */,
 				BC3D9AC01AE9F04000B8F306 /* MKAnnotationView+WebCache.m in Sources */,
 				BC3D9ABA1AE9F04000B8F306 /* NSObject+MJMember.m in Sources */,
 				BC00CA801AEB440300C8F419 /* EditTableVCellType1.m in Sources */,
 				BC3D9AA81AE9F04000B8F306 /* AFNTool.m in Sources */,
 				BC3D9AAE1AE9F04000B8F306 /* GXCycleScrollView.m in Sources */,
+				BC390DAC1AEBA92B0042348A /* SubscribeModel.m in Sources */,
 				BC3D9AD31AE9F07900B8F306 /* MainNavC.m in Sources */,
 				BCFDF4C21AEB8A9800283504 /* EditTableVCellType5.m in Sources */,
 				BC3D9ACB1AE9F04000B8F306 /* UIImage+MultiFormat.m in Sources */,
