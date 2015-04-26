@@ -21,6 +21,8 @@
     model.picture_url = dict[@"picture_url"];
     model.title = dict[@"title"];
     model.web_article_url = dict[@"web_article_url"];
+    model.from_web_title = dict[@"from_web_title"];
+    model.ID = dict[@"id"];
     return model;
 }
 

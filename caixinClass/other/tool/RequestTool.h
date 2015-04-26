@@ -14,6 +14,6 @@
 + (void)requestTitleListSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 // 请求url数据
-+ (void)requestWithURL:(NSString *)urlStr Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
++ (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 @end

@@ -12,6 +12,8 @@
 
 @property (nonatomic ,weak) UIWebView *webView;
 
+@property (nonatomic ,copy) NSString *url;
+
 @end
 
 @implementation DescVC
@@ -31,6 +33,22 @@
     NSURL *url = [NSURL URLWithString:self.url];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:request];
+}
+
+- (void)setListModel:(EditListModel *)listModel
+{
+    _listModel = listModel;
+    
+    self.url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
+    
+    self.title = listModel.title;
+}
+- (void)setSubListModel:(SubscribeListModel *)subListModel
+{
+    _subListModel = subListModel;
+    self.url = subListModel.web_article_url;
+    
+    self.title = subListModel.title;
 }
 
 @end

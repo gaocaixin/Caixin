@@ -17,7 +17,7 @@
 {
     NSString *url = @"http://mappv4.caixin.com/channel_list/index.json";
     
-    [self requestWithURL:url Success:^(id responseObject) {
+    [self requestWithURL:url isUpData:NO Success:^(id responseObject) {
         if (success) {
             success(responseObject);
         }
@@ -28,16 +28,23 @@
     }];
 }
 
-+ (void)requestWithURL:(NSString *)urlStr Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+
+
++ (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     NSFileManager *manager = [NSFileManager defaultManager];
     // 文件路径
-    NSString *cachePath = [NSHomeDirectory() stringByAppendingString:@"/Library/Caches/"];
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *tempUrlStr = [MyMD5 md5:urlStr];
-    NSString *filePath = [NSString stringWithFormat:@"%@%@", cachePath, tempUrlStr];
+    NSString *filePath = [cachePath stringByAppendingPathComponent:tempUrlStr];
     NSLog(@"%@", filePath);
-    // 删除原有
-//    [manager removeItemAtPath:filePath error:nil];
+    if (is) {
+        // 存在文件
+    if ([manager fileExistsAtPath:filePath]) {
+        // 删除原有
+        [manager removeItemAtPath:filePath error:nil];
+        }
+    }
     if (![manager fileExistsAtPath:filePath]) {
         // 文件不存在
         // 下载数据
@@ -84,7 +91,6 @@
     
     //检查附件是否存在
     if ([fileManager fileExistsAtPath:fileName]) {
-        NSData *audioData = [NSData dataWithContentsOfFile:fileName];
     }else{
         //创建附件存储目录
         if (![fileManager fileExistsAtPath:aSavePath]) {

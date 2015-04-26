@@ -24,6 +24,9 @@
 #import "SubscribeModel.h"
 #import "SubscribeListModel.h"
 #import "SubHeaderSectionView.h"
+#import "Animation.h"
+#import "PersonVC.h"
+#import "MJRefresh.h"
 
 #define CHANNLE_BTN_INTERVAL 10
 #define TITLEVIEW_HEIGHT 30
@@ -33,7 +36,7 @@
 #define TITLE_SUBSCRIBE @"我的订阅"
 #define TITLE_LAEST @"最新文章"
 
-@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MJRefreshBaseViewDelegate>
 
 // 频道滚动视图
 @property (nonatomic ,strong) UIScrollView *titleScrollView;
@@ -53,6 +56,7 @@
 
 @implementation HomeViewC
 
+#pragma mark - 初始化
 // 初始化
 - (instancetype)init
 {
@@ -64,6 +68,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 初始化nav
+    [self setUpNav];
     // 创建频道
     [self createTitleScrollView];
     // 创建list滚动视图
@@ -75,6 +81,32 @@
     [self requestTitleView];
     // 点击首页
     [self titleBtnClicked:self.titleBtnArray[0]];
+}
+
+- (void)setUpNav
+{
+    // 左边财新网图片
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    imageView.image = [UIImage imageNamed:@"ncxcaixin_logo"];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];
+    // 右边个人信息
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [btn setImage:[UIImage imageNamed:@"icon_setting_user"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(userBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+}
+
+// 跳到个人页面
+- (void)userBtnClicked:(UIButton *)btn
+{
+    // 添加动画
+    [self.navigationController.view.layer addAnimation:[Animation kCATransitionPushFromTop] forKey:nil];
+    PersonVC *view = [[PersonVC alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
+    [view.navigationController.navigationBar.subviews[0] setHidden:YES];
+    
 }
 
 #pragma mark - 频道下方list滚动栏
@@ -130,20 +162,36 @@
 // 创建tableview
 - (void)createTableViewWithFrame:(CGRect)frame tag:(int)tag
 {
+    // 给tableview增加一个数据源
+    NSMutableArray *array  = [[NSMutableArray alloc] init];
+    [self.tableViewDataArray addObject:array];
+    
+    // 创建tableview
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
     tableView.tag = tag;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.sectionHeaderHeight = 0;
     tableView.sectionFooterHeight = 0;
+//    tableView.bounces = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.listScrollView addSubview:tableView];
     [self.tabelViewArray addObject:tableView];
-    // 给tableview增加一个数据源
-    NSMutableArray *array  = [[NSMutableArray alloc] init];
-    [self.tableViewDataArray addObject:array];
     
+    // 添加上下拉刷新
+    if (tag != 1) {
+        MJRefreshFooterView *footer = [MJRefreshFooterView footer];
+        footer.scrollView = tableView;
+        footer.delegate = self;
+        footer.tag = tag;
+    }
+    MJRefreshHeaderView *header = [MJRefreshHeaderView header];
+    header.scrollView = tableView;
+    header.delegate = self;
+    header.tag = tag;
+    // 设置滚动范围
     self.listScrollView.contentSize = CGSizeMake(self.tabelViewArray.count * CGW(self.listScrollView), -1000);
+    
     
 }
 
@@ -240,8 +288,8 @@
             return cell;
         }
     }
-    else if (tableView == self.tabelViewArray[2]) {
-        SubscribeListModel *listModel = self.tableViewDataArray[2][indexPath.section];
+    else  {
+        SubscribeListModel *listModel = self.tableViewDataArray[tableView.tag][indexPath.section];
         // 根据数据返回模型
         if (listModel.author_img_url.length > 0) {
             EditTableVCellType8 *cell = [EditTableVCellType8 editTableVCell:tableView];
@@ -310,9 +358,8 @@
     if (tableView == self.tabelViewArray[0]) {
         EditModel *model = self.tableViewDataArray[0][indexPath.section];
         EditListModel *listModel = [model.listArr lastObject];
-        NSString *url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
         DescVC *desc =  [[DescVC alloc] init];
-        desc.url = url;
+        desc.listModel = listModel;
         [self.navigationController pushViewController:desc animated:YES];
     }
     else if (tableView == self.tabelViewArray[1]) {
@@ -320,20 +367,20 @@
         SubscribeListModel *listModel = model.listArr[indexPath.row];
         if (listModel.web_article_url.length > 0) {
             DescVC *desc =  [[DescVC alloc] init];
-            desc.url = listModel.web_article_url;
+            desc.subListModel = listModel;
             [self.navigationController pushViewController:desc animated:YES];
         }
     }
-    else if (tableView == self.tabelViewArray[2]) {
-        SubscribeListModel *listModel = self.tableViewDataArray[2][indexPath.section];
+    else  {
+        SubscribeListModel *listModel = self.tableViewDataArray[tableView.tag][indexPath.section];
         if (listModel.web_article_url.length > 0) {
             DescVC *desc =  [[DescVC alloc] init];
-            desc.url = listModel.web_article_url;
+            desc.subListModel = listModel;
             [self.navigationController pushViewController:desc animated:YES];
         }
-        
+    }
 }
-}
+
 #pragma mark - 频道栏
 
 // 定制频道滚动视图
@@ -422,6 +469,7 @@
     
     btn.tag = tag;
     btn.requestUrl = urlStr;
+    btn.lastRequestUrl = urlStr;
     
     [self.titleScrollView addSubview:btn];
     [self.titleBtnArray addObject:btn];
@@ -486,36 +534,120 @@
 // 请求tableview数据
 - (void)requesttTableViewData:(TitleButten *)btn
 {
-    NSLog(@"%@", btn.titleLabel.text);
+    if (btn == nil) {
+        return;
+    }
+    
+    if ([self.tableViewDataArray[btn.tag] count]>0) {
+        return;
+    }
+    NSLog(@"%@", btn.requestUrl);
+    
+    [self requesttTableViewDataWithStr:btn.requestUrl tag:btn.tag isUpData:NO success:nil failure:nil];
+
+}
+
+// 请求数据
+- (void)requesttTableViewDataWithStr:(NSString *)url tag:(int)tag isUpData:(int)is success:(void (^)())success failure:(void (^)())failure
+{
     // 解析数据
-    [RequestTool requestWithURL:btn.requestUrl Success:^(id responseObject) {
+    [RequestTool requestWithURL:url isUpData:is Success:^(id responseObject) {
         // 数据转模型
         NSArray *array = responseObject[@"data"];
         NSMutableArray *arrM = [NSMutableArray array];
-    
+        
         // 数据转模型
         for (NSDictionary *dict in array) {
             
-            if (btn == self.titleBtnArray[0]) {
+            if (tag == 0) {
                 EditModel *model = [EditModel modelWithDict:dict];
                 [arrM addObject:model];
                 
-            } else if (btn == self.titleBtnArray[1]) {
-            SubscribeModel *model = [SubscribeModel modelWithDict:dict];
-            [arrM addObject:model];
-            } else if (btn == self.titleBtnArray[2]) {
+            } else if (tag == 1) {
+                SubscribeModel *model = [SubscribeModel modelWithDict:dict];
+                [arrM addObject:model];
+            } else  {
                 SubscribeListModel *model = [SubscribeListModel modelWithDict:dict];
                 [arrM addObject:model];
             }
         }
+        // 插入下标
+        int index = arrM.count-1;
+        if (is) {
+            // 精选
+            if (tag == 0) {
+                // 当前最新的model
+                EditModel *model1 = self.tableViewDataArray[0][0];
+                EditListModel *listModel1 = [model1.listArr lastObject];
+                // 遍历
+                for (int i = arrM.count-1; i >= 0; i--) {
+                EditModel *model = arrM[i];
+                EditListModel *listModel = [model.listArr lastObject];
+                // 找到相等的下标
+                if ([listModel.ID isEqualToString:listModel1.ID]) {
+                    index = i;
+                    }
+                }
+               
+                // 插入新数据
+                for (int i = index-1; i >= 0; i--) {
+                    EditModel *newModel = arrM[i];
+                    [self.tableViewDataArray[0] insertObject:newModel atIndex:0];
+                }
+            // 订阅
+            } else if (tag == 1) {
+                // 最新model
+                SubscribeModel *model1 = self.tableViewDataArray[1][0];
+                SubscribeListModel *listModel1 = [model1.listArr lastObject];
+                // 遍历
+                for (int i = arrM.count-1; i >= 0; i--) {
+                    SubscribeModel *model = arrM[i];
+                    SubscribeListModel *listModel = [model.listArr lastObject];
+                    // 找到相等的下标
+                    if ([listModel.ID isEqualToString:listModel1.ID]) {
+                        index = i;
+                    }
+                }
+                // 插入新数据
+                for (int i = index-1; i >= 0; i--) {
+                    SubscribeModel *newModel = arrM[i];
+                    [self.tableViewDataArray[1] insertObject:newModel atIndex:0];
+                }
+            // 其他数据
+            } else {
+                // 最新model
+                SubscribeListModel *model1 = self.tableViewDataArray[tag][0];
+                // 遍历
+                for (int i = arrM.count-1; i >= 0; i--) {
+                    SubscribeListModel *model = arrM[i];
+                    // 找到相等的下标
+                    if ([model.ID isEqualToString:model1.ID]) {
+                        index = i;
+                    }
+                }
+                // 插入新数据
+                for (int i = index-1; i >= 0; i--) {
+                    SubscribeListModel *newModel = arrM[i];
+                    [self.tableViewDataArray[tag] insertObject:newModel atIndex:0];
+                }
+            }
+        } else {
+            [self.tableViewDataArray[tag] addObjectsFromArray:arrM];
+        }
         
-        [self.tableViewDataArray[btn.tag] addObjectsFromArray:arrM];
         // 刷新tableview
-        UITableView *tableView = self.tabelViewArray[btn.tag];
+        UITableView *tableView = self.tabelViewArray[tag];
         [tableView reloadData];
         
+        if (success) {
+            success();
+        }
+        
     }failure:^(NSError *error) {
-        NSLog(@"%@", error);
+        
+        if (failure) {
+            failure();
+        }
     }];
 }
 
@@ -534,6 +666,44 @@
     }
 }
 
+- (void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView
+{
+    TitleButten *btn = self.titleBtnArray[refreshView.tag];
+    
+    if ([refreshView isKindOfClass:[MJRefreshHeaderView class]]) {
+        // 请求最新数据
+        [self requesttTableViewDataWithStr:btn.lastRequestUrl tag:refreshView.tag isUpData:YES success:^{
+            [refreshView endRefreshing];
+        } failure:^{
+            [refreshView endRefreshing];
+        }];
+    } else if ([refreshView isKindOfClass:[MJRefreshFooterView class]]) {
+        // 上拉加载数据
+        
+        NSString *url = btn.requestUrl;
+        NSRange range = [url rangeOfString:@".json"];
+        NSRange indexRange = NSMakeRange(range.location - 1, 1);
+        // 当前url page属性值
+        NSString *index = [url substringWithRange:indexRange];
+        // 下一个page
+        int lastIndex = [index intValue]+1;
+        // 替换
+        NSString *str1 = [url substringToIndex:indexRange.location];
+        NSString *str2 = [NSString stringWithFormat:@"%d", lastIndex];
+        NSString *str3 = [url substringFromIndex:range.location];
+        NSArray *array = @[str1, str2, str3];
+        NSString *newUrl = [array componentsJoinedByString:@""];
+//        NSLog(@"%@", newUrl);
+        btn.requestUrl = newUrl;
+        
+        [self requesttTableViewDataWithStr:newUrl tag:refreshView.tag isUpData:NO success:^{
+            [refreshView endRefreshing];
+        } failure:^{
+            [refreshView endRefreshing];
+        }];
+    }
+    
+}
 
 
 @end

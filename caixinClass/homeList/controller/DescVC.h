@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditListModel.h"
+#import "SubscribeListModel.h"
 
 @interface DescVC : UIViewController
 
-@property (nonatomic, copy) NSString *url;
-
+@property (nonatomic ,strong) EditListModel *listModel;
+@property (nonatomic ,strong) SubscribeListModel *subListModel;
 @end

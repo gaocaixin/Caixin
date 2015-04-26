@@ -11,5 +11,6 @@
 @interface TitleButten : UIButton
 
 @property (nonatomic, copy) NSString *requestUrl;
+@property (nonatomic, copy) NSString *lastRequestUrl;
 
 @end
