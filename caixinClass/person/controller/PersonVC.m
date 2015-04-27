@@ -10,6 +10,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "LoginVC.h"
 #import "SettingVC.h"
+#import "ChannelSettingVC.h"
 
 @interface PersonVC ()
 
@@ -127,6 +128,7 @@
 }
 
 - (IBAction)customBtnClicked:(UIButton *)sender {
+    [self.navigationController pushViewController:[[ChannelSettingVC alloc] init] animated:YES];
 }
 
 - (IBAction)subscribeBtnClicked:(UIButton *)sender {

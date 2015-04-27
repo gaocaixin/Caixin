@@ -32,6 +32,7 @@
 
 + (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
+    NSLog(@"%@", urlStr);
     NSFileManager *manager = [NSFileManager defaultManager];
     // 文件路径
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];

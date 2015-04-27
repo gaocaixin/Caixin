@@ -12,6 +12,7 @@
 @interface EditTableVCellType1 ()
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *photosImageView;
 
 @end
 
@@ -38,6 +39,8 @@
     EditListModel *listModel = [model.listArr lastObject];
     [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:nil];
     self.titleLabel.text = listModel.title;
+    
+    self.photosImageView.hidden = ([listModel.article_type intValue] != 3);
 }
 
 

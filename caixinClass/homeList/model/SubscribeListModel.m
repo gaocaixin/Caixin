@@ -23,6 +23,7 @@
     model.web_article_url = dict[@"web_article_url"];
     model.from_web_title = dict[@"from_web_title"];
     model.ID = dict[@"id"];
+    model.article_type = dict[@"article_type"];
     return model;
 }
 

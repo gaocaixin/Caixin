@@ -41,18 +41,28 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recommendPic" translatesAutoresizingMaskIntoConstraints="NO" id="eTO-K2-g7I">
+                        <rect key="frame" x="5" y="40" width="40" height="40"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recommendList_play" translatesAutoresizingMaskIntoConstraints="NO" id="Fkt-qY-0TA">
+                        <rect key="frame" x="5" y="40" width="40" height="40"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="commentLabel" destination="iRU-Yg-rGk" id="SgK-Q4-Tsf"/>
                 <outlet property="leftImageView" destination="Sue-AK-FCG" id="jlg-wb-qkp"/>
+                <outlet property="phototsImageView" destination="eTO-K2-g7I" id="aet-HA-9uU"/>
                 <outlet property="timeLabel" destination="F0L-IH-fT7" id="13j-qw-Soe"/>
                 <outlet property="titleLabel" destination="adm-tN-hH9" id="Vfa-1M-nxt"/>
+                <outlet property="videoImageView" destination="Fkt-qY-0TA" id="Uh9-pM-ByQ"/>
             </connections>
-            <point key="canvasLocation" x="-34" y="69"/>
+            <point key="canvasLocation" x="-34" y="68"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="icon_setting_comment" width="35" height="35"/>
+        <image name="recommendList_play" width="29" height="29"/>
+        <image name="recommendPic" width="37" height="37"/>
     </resources>
 </document>

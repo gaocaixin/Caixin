@@ -38,18 +38,28 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-8P-l4l">
                         <rect key="frame" x="200" y="0.0" width="120" height="80"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recommendPic" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-AN-C4m">
+                        <rect key="frame" x="207" y="40" width="40" height="40"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recommendList_play" translatesAutoresizingMaskIntoConstraints="NO" id="EOW-b1-9ka">
+                        <rect key="frame" x="207" y="40" width="40" height="40"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="commendLabel" destination="yUn-u5-3Q6" id="ChU-RT-Tgn"/>
                 <outlet property="futuImageView" destination="rt8-RH-DOb" id="F8i-Ur-geE"/>
+                <outlet property="photosImageView" destination="9c3-AN-C4m" id="5Ho-lo-ivx"/>
                 <outlet property="rightImageView" destination="Doc-8P-l4l" id="xOW-cu-wl7"/>
                 <outlet property="titleLabel" destination="09x-ap-m1h" id="kxs-0I-q9i"/>
+                <outlet property="videoImageView" destination="EOW-b1-9ka" id="bnV-Df-WmR"/>
             </connections>
             <point key="canvasLocation" x="107" y="307"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="icon_setting_comment" width="35" height="35"/>
+        <image name="recommendList_play" width="29" height="29"/>
+        <image name="recommendPic" width="37" height="37"/>
     </resources>
 </document>

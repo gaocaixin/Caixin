@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commendLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *photosImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
 
 @end
 
@@ -50,6 +52,13 @@
 //        rect.origin.x = 10;
 //        self.titleLabel.frame = rect;
     }
+    [self hiddenImage:listModel.article_type];
+}
+
+- (void)hiddenImage:(NSString *)str
+{
+    self.photosImageView.hidden = ([str intValue] != 3);
+    self.videoImageView.hidden = ([str intValue] != 2);
 }
 
 @end

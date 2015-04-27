@@ -39,7 +39,13 @@
 {
     _listModel = listModel;
     
-    self.url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
+    if ([_listModel.article_type intValue] == 3) {
+        self.url = listModel.web_url;
+    } else {
+        self.url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", listModel.ID];
+    }
+    
+    
     
     self.title = listModel.title;
 }
