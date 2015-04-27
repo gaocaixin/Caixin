@@ -8,6 +8,8 @@
 
 #import "PersonVC.h"
 #import "MBProgressHUD+MJ.h"
+#import "LoginVC.h"
+#import "SettingVC.h"
 
 @interface PersonVC ()
 
@@ -85,8 +87,18 @@
     [self.navigationController.navigationBar.subviews[0] setHidden:NO];
 }
 
+- (void)isNeedLogin
+{
+    //没有登录
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    if ([user objectForKey:@"isLogin"] == nil) {
+        LoginVC *vc = [[LoginVC alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
 
 - (IBAction)userBtnClicked:(UIButton *)sender {
+    [self isNeedLogin];
 }
 
 - (IBAction)loadBtnClicked:(UIButton *)sender {
@@ -121,14 +133,18 @@
 }
 
 - (IBAction)settingBtnClicked:(UIButton *)sender {
+    SettingVC *vc = [[SettingVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)collectionBtnClicked:(UIButton *)sender {
 }
 
 - (IBAction)attentionBtnClicked:(UIButton *)sender {
+    [self isNeedLogin];
 }
 
 - (IBAction)commentBtnClicked:(UIButton *)sender {
+    [self isNeedLogin];
 }
 @end

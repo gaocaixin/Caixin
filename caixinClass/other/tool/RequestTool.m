@@ -37,7 +37,7 @@
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *tempUrlStr = [MyMD5 md5:urlStr];
     NSString *filePath = [cachePath stringByAppendingPathComponent:tempUrlStr];
-    NSLog(@"%@", filePath);
+//    NSLog(@"%@", filePath);
     if (is) {
         // 存在文件
     if ([manager fileExistsAtPath:filePath]) {
@@ -80,53 +80,5 @@
     }
 
 }
-
-
-- (void)downloadFileURL:(NSString *)aUrl savePath:(NSString *)aSavePath fileName:(NSString *)aFileName tag:(NSInteger)aTag
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    //检查本地文件是否已存在
-    NSString *fileName = [NSString stringWithFormat:@"%@/%@", aSavePath, aFileName];
-    
-    //检查附件是否存在
-    if ([fileManager fileExistsAtPath:fileName]) {
-    }else{
-        //创建附件存储目录
-        if (![fileManager fileExistsAtPath:aSavePath]) {
-            [fileManager createDirectoryAtPath:aSavePath withIntermediateDirectories:YES attributes:nil error:nil];
-        }
-        
-        //下载附件
-        NSURL *url = [[NSURL alloc] initWithString:aUrl];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-        operation.inputStream   = [NSInputStream inputStreamWithURL:url];
-        operation.outputStream  = [NSOutputStream outputStreamToFileAtPath:fileName append:NO];
-        
-        //下载进度控制
-        /*
-         [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-         NSLog(@"is download：%f", (float)totalBytesRead/totalBytesExpectedToRead);
-         }];
-         */
-        
-        //已完成下载
-        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            NSData *audioData = [NSData dataWithContentsOfFile:fileName];
-            //设置下载数据到res字典对象中并用代理返回下载数据NSData
-//            [self requestFinished:[NSDictionary dictionaryWithObject:audioData forKey:@"res"] tag:aTag];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-            //下载失败
-//            [self requestFailed:aTag];
-        }];
-        
-        [operation start];
-    }
-}
-
 
 @end

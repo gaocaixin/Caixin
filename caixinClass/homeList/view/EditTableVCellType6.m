@@ -43,7 +43,7 @@
 {
     [super setSubscribeListModel:subscribeListModel];
     
-    self.timeLabel.text = subscribeListModel.create_time;
+    self.timeLabel.text = [subscribeListModel.create_time toTime];
     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:subscribeListModel.picture_url] placeholderImage:[UIImage imageNamed:@"pic_default"]];
     self.commentLabel.text = subscribeListModel.comment_count;
     self.titleLabel.text = subscribeListModel.title;

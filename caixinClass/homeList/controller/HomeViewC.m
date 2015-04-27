@@ -541,7 +541,7 @@
     if ([self.tableViewDataArray[btn.tag] count]>0) {
         return;
     }
-    NSLog(@"%@", btn.requestUrl);
+//    NSLog(@"%@", btn.requestUrl);
     
     [self requesttTableViewDataWithStr:btn.requestUrl tag:btn.tag isUpData:NO success:nil failure:nil];
 

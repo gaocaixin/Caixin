@@ -45,7 +45,7 @@
 + (CATransition *)kCATransitionPushFromTop
 {
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.75;
+    transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromTop;

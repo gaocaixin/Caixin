@@ -76,6 +76,13 @@
 		BC55AA5C1AECA01200E9D338 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC55AA5B1AECA01200E9D338 /* Animation.m */; };
 		BC55AA601AECA14700E9D338 /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC55AA5E1AECA14700E9D338 /* PersonVC.m */; };
 		BC55AA611AECA14700E9D338 /* PersonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC55AA5F1AECA14700E9D338 /* PersonVC.xib */; };
+		BC6F05EA1AEDC2D800E9FFAB /* NSString+ToTimeStr.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05E91AEDC2D800E9FFAB /* NSString+ToTimeStr.m */; };
+		BC6F05EE1AEDD00800E9FFAB /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05EC1AEDD00800E9FFAB /* LoginVC.m */; };
+		BC6F05EF1AEDD00800E9FFAB /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6F05ED1AEDD00800E9FFAB /* LoginVC.xib */; };
+		BC6F05F31AEDD94100E9FFAB /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05F11AEDD94100E9FFAB /* SettingVC.m */; };
+		BC6F05F41AEDD94100E9FFAB /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6F05F21AEDD94100E9FFAB /* SettingVC.xib */; };
+		BC6F05F81AEDEFD200E9FFAB /* CXNewFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05F71AEDEFD200E9FFAB /* CXNewFeature.m */; };
+		BC6F05FB1AEDF31000E9FFAB /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05FA1AEDF31000E9FFAB /* Tool.m */; };
 		BCFDF4BA1AEB7EE700283504 /* EditTableVCellType6.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */; };
 		BCFDF4BB1AEB7EE700283504 /* EditTableVCellType6.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */; };
 		BCFDF4BE1AEB7F7C00283504 /* EditTableVCellType.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */; };
@@ -238,6 +245,18 @@
 		BC55AA5D1AECA14700E9D338 /* PersonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonVC.h; sourceTree = "<group>"; };
 		BC55AA5E1AECA14700E9D338 /* PersonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonVC.m; sourceTree = "<group>"; };
 		BC55AA5F1AECA14700E9D338 /* PersonVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonVC.xib; sourceTree = "<group>"; };
+		BC6F05E81AEDC2D800E9FFAB /* NSString+ToTimeStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ToTimeStr.h"; sourceTree = "<group>"; };
+		BC6F05E91AEDC2D800E9FFAB /* NSString+ToTimeStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ToTimeStr.m"; sourceTree = "<group>"; };
+		BC6F05EB1AEDD00800E9FFAB /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		BC6F05EC1AEDD00800E9FFAB /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		BC6F05ED1AEDD00800E9FFAB /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		BC6F05F01AEDD94100E9FFAB /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		BC6F05F11AEDD94100E9FFAB /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		BC6F05F21AEDD94100E9FFAB /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		BC6F05F61AEDEFD200E9FFAB /* CXNewFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNewFeature.h; sourceTree = "<group>"; };
+		BC6F05F71AEDEFD200E9FFAB /* CXNewFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNewFeature.m; sourceTree = "<group>"; };
+		BC6F05F91AEDF31000E9FFAB /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		BC6F05FA1AEDF31000E9FFAB /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		BCFDF4B71AEB7EE700283504 /* EditTableVCellType6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType6.h; sourceTree = "<group>"; };
 		BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType6.m; sourceTree = "<group>"; };
 		BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType6.xib; sourceTree = "<group>"; };
@@ -337,6 +356,7 @@
 		BC3D9A2D1AE9F04000B8F306 /* caixinClass */ = {
 			isa = PBXGroup;
 			children = (
+				BC6F05F51AEDEFD200E9FFAB /* NewFeature */,
 				BC3D9A2E1AE9F04000B8F306 /* descList */,
 				BC3D9A321AE9F04000B8F306 /* homeList */,
 				BC3D9A361AE9F04000B8F306 /* main */,
@@ -499,6 +519,8 @@
 		BC3D9A3B1AE9F04000B8F306 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				BC6F05E81AEDC2D800E9FFAB /* NSString+ToTimeStr.h */,
+				BC6F05E91AEDC2D800E9FFAB /* NSString+ToTimeStr.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -656,6 +678,8 @@
 				BC3D9A9F1AE9F04000B8F306 /* RequestTool.m */,
 				BC55AA5A1AECA01200E9D338 /* Animation.h */,
 				BC55AA5B1AECA01200E9D338 /* Animation.m */,
+				BC6F05F91AEDF31000E9FFAB /* Tool.h */,
+				BC6F05FA1AEDF31000E9FFAB /* Tool.m */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -676,6 +700,12 @@
 				BC55AA5D1AECA14700E9D338 /* PersonVC.h */,
 				BC55AA5E1AECA14700E9D338 /* PersonVC.m */,
 				BC55AA5F1AECA14700E9D338 /* PersonVC.xib */,
+				BC6F05EB1AEDD00800E9FFAB /* LoginVC.h */,
+				BC6F05EC1AEDD00800E9FFAB /* LoginVC.m */,
+				BC6F05ED1AEDD00800E9FFAB /* LoginVC.xib */,
+				BC6F05F01AEDD94100E9FFAB /* SettingVC.h */,
+				BC6F05F11AEDD94100E9FFAB /* SettingVC.m */,
+				BC6F05F21AEDD94100E9FFAB /* SettingVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -701,6 +731,15 @@
 				BC3D9ADC1AEA216300B8F306 /* MyMD5.m */,
 			);
 			path = MD5;
+			sourceTree = "<group>";
+		};
+		BC6F05F51AEDEFD200E9FFAB /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				BC6F05F61AEDEFD200E9FFAB /* CXNewFeature.h */,
+				BC6F05F71AEDEFD200E9FFAB /* CXNewFeature.m */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -783,6 +822,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6F05EF1AEDD00800E9FFAB /* LoginVC.xib in Resources */,
 				BCFDF4BB1AEB7EE700283504 /* EditTableVCellType6.xib in Resources */,
 				BC3D9A141AE9EF9600B8F306 /* Images.xcassets in Resources */,
 				BCFDF4C81AEB8EA300283504 /* EditTableVCellType4.xib in Resources */,
@@ -790,6 +830,7 @@
 				BC390DB91AEBCD830042348A /* SubHeaderSectionView.xib in Resources */,
 				BCFDF4CD1AEB902900283504 /* EditTableVCellType2.xib in Resources */,
 				BCFDF4C31AEB8A9800283504 /* EditTableVCellType5.xib in Resources */,
+				BC6F05F41AEDD94100E9FFAB /* SettingVC.xib in Resources */,
 				BC3D9AB01AE9F04000B8F306 /* MBProgressHUD.bundle in Resources */,
 				BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */,
 				BC55AA611AECA14700E9D338 /* PersonVC.xib in Resources */,
@@ -822,11 +863,13 @@
 				BC3D9ACF1AE9F04000B8F306 /* UIView+WebCacheOperation.m in Sources */,
 				BCFDF4CC1AEB902900283504 /* EditTableVCellType2.m in Sources */,
 				BCFDF4C71AEB8EA300283504 /* EditTableVCellType4.m in Sources */,
+				BC6F05F81AEDEFD200E9FFAB /* CXNewFeature.m in Sources */,
 				BC3D9AB91AE9F04000B8F306 /* NSObject+MJKeyValue.m in Sources */,
 				BC3D9AB21AE9F04000B8F306 /* MJArgument.m in Sources */,
 				BC3D9A0C1AE9EF9600B8F306 /* AppDelegate.m in Sources */,
 				BC3D9AA61AE9F04000B8F306 /* AFHTTPSessionManager.m in Sources */,
 				BC3D9AC21AE9F04000B8F306 /* SDImageCache.m in Sources */,
+				BC6F05FB1AEDF31000E9FFAB /* Tool.m in Sources */,
 				BC390DB31AEBC5B00042348A /* EditTableVCellType8.m in Sources */,
 				BC3D9AB41AE9F04000B8F306 /* MJMember.m in Sources */,
 				BC3D9AC31AE9F04000B8F306 /* SDWebImageCompat.m in Sources */,
@@ -857,6 +900,7 @@
 				BC3D9AA91AE9F04000B8F306 /* AFSecurityPolicy.m in Sources */,
 				BC3D9AB31AE9F04000B8F306 /* MJIvar.m in Sources */,
 				BC390DB71AEBCD6F0042348A /* SubHeaderSectionView.m in Sources */,
+				BC6F05EE1AEDD00800E9FFAB /* LoginVC.m in Sources */,
 				BC3D9AC01AE9F04000B8F306 /* MKAnnotationView+WebCache.m in Sources */,
 				BC3D9ABA1AE9F04000B8F306 /* NSObject+MJMember.m in Sources */,
 				BC00CA801AEB440300C8F419 /* EditTableVCellType1.m in Sources */,
@@ -870,12 +914,14 @@
 				BC00CA7C1AEB389800C8F419 /* EditListModel.m in Sources */,
 				BC3D9ACC1AE9F04000B8F306 /* UIImage+WebP.m in Sources */,
 				BCFDF4BA1AEB7EE700283504 /* EditTableVCellType6.m in Sources */,
+				BC6F05EA1AEDC2D800E9FFAB /* NSString+ToTimeStr.m in Sources */,
 				BC3D9AC91AE9F04000B8F306 /* UIButton+WebCache.m in Sources */,
 				BC3D9AAB1AE9F04000B8F306 /* AFURLRequestSerialization.m in Sources */,
 				BC3D9AD91AE9F48700B8F306 /* TitleModel.m in Sources */,
 				BC3D9AB61AE9F04000B8F306 /* MJType.m in Sources */,
 				BC3D9AAD1AE9F04000B8F306 /* AFURLSessionManager.m in Sources */,
 				BC3D9AA71AE9F04000B8F306 /* AFNetworkReachabilityManager.m in Sources */,
+				BC6F05F31AEDD94100E9FFAB /* SettingVC.m in Sources */,
 				BC55AA5C1AECA01200E9D338 /* Animation.m in Sources */,
 				BC3D9ABC1AE9F04000B8F306 /* MJRefreshBaseView.m in Sources */,
 				BC3D9AE01AEA321700B8F306 /* TitleButten.m in Sources */,

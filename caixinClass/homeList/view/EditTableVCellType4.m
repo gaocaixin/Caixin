@@ -41,7 +41,7 @@
 {
     [super setSubscribeListModel:subscribeListModel];
     
-    self.timeLabel.text = subscribeListModel.create_time;
+    self.timeLabel.text = [subscribeListModel.create_time toTime];
     self.commentLabel.text = subscribeListModel.comment_count;
     self.titleLabel.text = subscribeListModel.title;
 }

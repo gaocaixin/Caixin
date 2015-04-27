@@ -16,8 +16,11 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDw-XQ-LYY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_Label_Bg" translatesAutoresizingMaskIntoConstraints="NO" id="HJN-Bi-USn">
+                        <rect key="frame" x="0.0" y="85" width="320" height="97"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-YF-r6f">
-                        <rect key="frame" x="8" y="131" width="304" height="41"/>
+                        <rect key="frame" x="8" y="130" width="304" height="40"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +35,10 @@
                 <outlet property="bgImageView" destination="mDw-XQ-LYY" id="1L6-aw-Iu6"/>
                 <outlet property="titleLabel" destination="eWN-YF-r6f" id="AxC-bM-7ud"/>
             </connections>
-            <point key="canvasLocation" x="293" y="241"/>
+            <point key="canvasLocation" x="327" y="234"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="image_Label_Bg" width="320" height="85"/>
+    </resources>
 </document>

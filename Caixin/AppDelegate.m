@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainNavC.h"
 #import "HomeViewC.h"
+#import "CXNewFeature.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,19 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.window.rootViewController = [[MainNavC alloc] initWithRootViewController:[[HomeViewC alloc] init]];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString *pre = [user objectForKey:@"CFBundleVersion"];
+    NSString *cur = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    if ([pre isEqualToString:cur]) {
+        self.window.rootViewController = [[MainNavC alloc] initWithRootViewController:[[HomeViewC alloc] init]];
+//        self.window.rootViewController = [[CXNewFeature alloc] init];
+    } else {
+        self.window.rootViewController = [[CXNewFeature alloc] init];
+        [user setObject:cur forKey:@"CFBundleVersion"];
+        [user synchronize];
+    }
+    
+    
     
     [self.window makeKeyAndVisible];
 

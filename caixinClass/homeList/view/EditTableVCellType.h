@@ -10,6 +10,7 @@
 #import "EditModel.h"
 #import "EditListModel.h"
 #import "SubscribeListModel.h"
+#import "NSString+ToTimeStr.h"
 
 @interface EditTableVCellType : UITableViewCell
 
