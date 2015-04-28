@@ -19,6 +19,7 @@
 @implementation EditTableVCellType1
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
 }
 
 
@@ -37,7 +38,7 @@
     [super setModel:model];
     
     EditListModel *listModel = [model.listArr lastObject];
-    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:nil];
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
     self.titleLabel.text = listModel.title;
     
     self.photosImageView.hidden = ([listModel.article_type intValue] != 3);

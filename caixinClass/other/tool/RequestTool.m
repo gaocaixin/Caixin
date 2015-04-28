@@ -28,7 +28,21 @@
     }];
 }
 
-
+// 请求订阅栏目
++ (void)requestSubListSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+{
+    NSString *url = @"http://mappv4.caixin.com/subscribe_list/index.json";
+    
+    [self requestWithURL:url isUpData:YES Success:^(id responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 
 + (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {

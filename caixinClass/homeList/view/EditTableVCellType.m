@@ -13,6 +13,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//    CGRect rect = self.frame;
+//    rect.size.width = SCREEN_WIDTH;
+//    self.frame = rect;
+//    self.backgroundColor = [UIColor redColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

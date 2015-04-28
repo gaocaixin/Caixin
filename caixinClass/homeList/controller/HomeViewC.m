@@ -173,6 +173,11 @@
     tableView.dataSource = self;
     tableView.sectionHeaderHeight = 0;
     tableView.sectionFooterHeight = 0;
+    if (tag != 1) {
+        tableView.contentInset = UIEdgeInsetsMake(-35, 0, -19, 0);
+    } else {
+        tableView.contentInset = UIEdgeInsetsMake(1, 0, -10, 0);
+    }
 //    tableView.bounces = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.listScrollView addSubview:tableView];

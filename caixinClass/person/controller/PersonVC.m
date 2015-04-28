@@ -11,6 +11,7 @@
 #import "LoginVC.h"
 #import "SettingVC.h"
 #import "ChannelSettingVC.h"
+#import "SubscriptionSettingVC.h"
 
 @interface PersonVC ()
 
@@ -46,7 +47,7 @@
     [super viewDidLoad];
     
     [self setUpNav];
-    
+    self.view.backgroundColor = [UIColor redColor];
     // 计算缓存
     [self filesize];
 }
@@ -132,6 +133,7 @@
 }
 
 - (IBAction)subscribeBtnClicked:(UIButton *)sender {
+    [self.navigationController pushViewController:[[SubscriptionSettingVC alloc] init] animated:YES];
 }
 
 - (IBAction)settingBtnClicked:(UIButton *)sender {
@@ -140,6 +142,7 @@
 }
 
 - (IBAction)collectionBtnClicked:(UIButton *)sender {
+    [self isNeedLogin];
 }
 
 - (IBAction)attentionBtnClicked:(UIButton *)sender {

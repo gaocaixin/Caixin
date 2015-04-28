@@ -26,6 +26,9 @@
 #define CGX(rect)               rect.origin.x
 #define CGY(rect)               rect.origin.y
 
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 #define HEIGHT_NAV              44
 #define HEIGHT_STA              20
 #define HEIGHT_TOOLBAR          49

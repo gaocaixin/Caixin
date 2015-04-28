@@ -73,6 +73,10 @@
 		BC3D9AD91AE9F48700B8F306 /* TitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9AD81AE9F48700B8F306 /* TitleModel.m */; };
 		BC3D9ADD1AEA216300B8F306 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9ADC1AEA216300B8F306 /* MyMD5.m */; };
 		BC3D9AE01AEA321700B8F306 /* TitleButten.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9ADF1AEA321700B8F306 /* TitleButten.m */; };
+		BC51F66D1AEF12D000722200 /* SubscriptionSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51F66B1AEF12D000722200 /* SubscriptionSettingVC.m */; };
+		BC51F66E1AEF12D000722200 /* SubscriptionSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC51F66C1AEF12D000722200 /* SubscriptionSettingVC.xib */; };
+		BC51F6711AEF1ABB00722200 /* SubListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51F6701AEF1ABB00722200 /* SubListModel.m */; };
+		BC51F6741AEF209D00722200 /* SubButten.m in Sources */ = {isa = PBXBuildFile; fileRef = BC51F6731AEF209D00722200 /* SubButten.m */; };
 		BC55AA5C1AECA01200E9D338 /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC55AA5B1AECA01200E9D338 /* Animation.m */; };
 		BC55AA601AECA14700E9D338 /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC55AA5E1AECA14700E9D338 /* PersonVC.m */; };
 		BC55AA611AECA14700E9D338 /* PersonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC55AA5F1AECA14700E9D338 /* PersonVC.xib */; };
@@ -243,6 +247,13 @@
 		BC3D9ADC1AEA216300B8F306 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BC3D9ADE1AEA321700B8F306 /* TitleButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButten.h; sourceTree = "<group>"; };
 		BC3D9ADF1AEA321700B8F306 /* TitleButten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButten.m; sourceTree = "<group>"; };
+		BC51F66A1AEF12D000722200 /* SubscriptionSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionSettingVC.h; sourceTree = "<group>"; };
+		BC51F66B1AEF12D000722200 /* SubscriptionSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscriptionSettingVC.m; sourceTree = "<group>"; };
+		BC51F66C1AEF12D000722200 /* SubscriptionSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscriptionSettingVC.xib; sourceTree = "<group>"; };
+		BC51F66F1AEF1ABB00722200 /* SubListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubListModel.h; sourceTree = "<group>"; };
+		BC51F6701AEF1ABB00722200 /* SubListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubListModel.m; sourceTree = "<group>"; };
+		BC51F6721AEF209D00722200 /* SubButten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubButten.h; sourceTree = "<group>"; };
+		BC51F6731AEF209D00722200 /* SubButten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubButten.m; sourceTree = "<group>"; };
 		BC55AA5A1AECA01200E9D338 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		BC55AA5B1AECA01200E9D338 /* Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
 		BC55AA5D1AECA14700E9D338 /* PersonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonVC.h; sourceTree = "<group>"; };
@@ -717,6 +728,9 @@
 				BC6F05FC1AEE24EE00E9FFAB /* ChannelSettingVC.h */,
 				BC6F05FD1AEE24EE00E9FFAB /* ChannelSettingVC.m */,
 				BC6F05FE1AEE24EE00E9FFAB /* ChannelSettingVC.xib */,
+				BC51F66A1AEF12D000722200 /* SubscriptionSettingVC.h */,
+				BC51F66B1AEF12D000722200 /* SubscriptionSettingVC.m */,
+				BC51F66C1AEF12D000722200 /* SubscriptionSettingVC.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -724,6 +738,8 @@
 		BC3D9AA21AE9F04000B8F306 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				BC51F66F1AEF1ABB00722200 /* SubListModel.h */,
+				BC51F6701AEF1ABB00722200 /* SubListModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -733,6 +749,8 @@
 			children = (
 				BC6F06011AEE363600E9FFAB /* ChannelBtn.h */,
 				BC6F06021AEE363600E9FFAB /* ChannelBtn.m */,
+				BC51F6721AEF209D00722200 /* SubButten.h */,
+				BC51F6731AEF209D00722200 /* SubButten.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -849,6 +867,7 @@
 				BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */,
 				BC55AA611AECA14700E9D338 /* PersonVC.xib in Resources */,
 				BC390DB41AEBC5B00042348A /* EditTableVCellType8.xib in Resources */,
+				BC51F66E1AEF12D000722200 /* SubscriptionSettingVC.xib in Resources */,
 				BC3D9ABB1AE9F04000B8F306 /* MJRefresh.bundle in Resources */,
 				BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */,
 			);
@@ -871,6 +890,7 @@
 				BC3D9ACA1AE9F04000B8F306 /* UIImage+GIF.m in Sources */,
 				BC00CA851AEB6D2C00C8F419 /* EditTableVCellType3.m in Sources */,
 				BC3D9ABD1AE9F04000B8F306 /* MJRefreshConst.m in Sources */,
+				BC51F6741AEF209D00722200 /* SubButten.m in Sources */,
 				BCFDF4D51AEBA30400283504 /* DescVC.m in Sources */,
 				BC3D9AA41AE9F04000B8F306 /* AFHTTPRequestOperation.m in Sources */,
 				BC3D9ABF1AE9F04000B8F306 /* MJRefreshHeaderView.m in Sources */,
@@ -902,6 +922,7 @@
 				BC3D9AAC1AE9F04000B8F306 /* AFURLResponseSerialization.m in Sources */,
 				BC3D9AD01AE9F04000B8F306 /* RequestTool.m in Sources */,
 				BC6F05FF1AEE24EE00E9FFAB /* ChannelSettingVC.m in Sources */,
+				BC51F66D1AEF12D000722200 /* SubscriptionSettingVC.m in Sources */,
 				BC3D9AC41AE9F04000B8F306 /* SDWebImageDecoder.m in Sources */,
 				BC3D9ABE1AE9F04000B8F306 /* MJRefreshFooterView.m in Sources */,
 				BC3D9AAA1AE9F04000B8F306 /* AFURLConnectionOperation.m in Sources */,
@@ -911,6 +932,7 @@
 				BC3D9AB11AE9F04000B8F306 /* MBProgressHUD.m in Sources */,
 				BC390DAF1AEBA9D00042348A /* SubscribeListModel.m in Sources */,
 				BC00CA791AEB366600C8F419 /* EditModel.m in Sources */,
+				BC51F6711AEF1ABB00722200 /* SubListModel.m in Sources */,
 				BCFDF4D11AEB98A700283504 /* EditTableVCellType7.m in Sources */,
 				BC3D9AA91AE9F04000B8F306 /* AFSecurityPolicy.m in Sources */,
 				BC3D9AB31AE9F04000B8F306 /* MJIvar.m in Sources */,

@@ -16,4 +16,7 @@
 // 请求url数据
 + (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
+// 请求订阅栏目
++ (void)requestSubListSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
 @end
