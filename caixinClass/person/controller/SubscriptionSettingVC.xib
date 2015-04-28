@@ -17,27 +17,91 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wBB-E8-3us">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wBB-E8-3us">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  推荐订阅 Recommended" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K5-FW-TRR">
-                            <rect key="frame" x="0.0" y="460" width="320" height="25"/>
-                            <color key="backgroundColor" red="1" green="0.62930919949999997" blue="0.1015093116" alpha="0.82999999999999996" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  我的订阅 My subscription" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv4-8K-QC6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  我的订阅 My subscription" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv4-8K-QC6">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
-                            <color key="backgroundColor" red="0.21928084610000001" green="0.41046418289999997" blue="1" alpha="0.82999999999999996" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="88x-3K-2qt"/>
+                                <constraint firstAttribute="height" constant="25" id="CCv-HS-lgb"/>
+                                <constraint firstAttribute="height" constant="25" id="l82-Hi-aJx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="CCv-HS-lgb"/>
+                                    <exclude reference="l82-Hi-aJx"/>
+                                </mask>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  推荐订阅 Recommended" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K5-FW-TRR">
+                            <rect key="frame" x="0.0" y="460" width="320" height="25"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Qn3-VS-GnC"/>
+                                <constraint firstAttribute="height" constant="25" id="dAg-2b-gy8"/>
+                                <constraint firstAttribute="height" constant="25" id="wD8-HE-7Vu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="1" green="0.62930919949999997" blue="0.1015093116" alpha="0.82999999999999996" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Qn3-VS-GnC"/>
+                                    <exclude reference="wD8-HE-7Vu"/>
+                                </mask>
+                            </variation>
                         </label>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="6oh-Ve-Xb4"/>
+                        <constraint firstAttribute="trailing" secondItem="Kv4-8K-QC6" secondAttribute="trailing" id="75Q-K7-mAb"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="top" secondItem="Kv4-8K-QC6" secondAttribute="bottom" constant="435" id="BSt-Bd-vTc"/>
+                        <constraint firstAttribute="trailing" secondItem="Kv4-8K-QC6" secondAttribute="trailing" id="BU0-aR-DrH"/>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="Bwf-8O-umB"/>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="Cqc-YZ-3xw"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="top" secondItem="wBB-E8-3us" secondAttribute="top" constant="460" id="IKa-IU-zkJ"/>
+                        <constraint firstAttribute="trailing" secondItem="2K5-FW-TRR" secondAttribute="trailing" id="Ljh-G0-SNY"/>
+                        <constraint firstAttribute="trailing" secondItem="2K5-FW-TRR" secondAttribute="trailing" id="NLx-uQ-yxz"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="U1s-jl-cgz"/>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="top" secondItem="wBB-E8-3us" secondAttribute="top" id="V5z-vi-E98"/>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="top" secondItem="wBB-E8-3us" secondAttribute="top" id="XdM-fX-KVq"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="ZqE-BX-Qwm"/>
+                        <constraint firstAttribute="trailing" secondItem="Kv4-8K-QC6" secondAttribute="trailing" id="g3y-KY-u6t"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="top" secondItem="wBB-E8-3us" secondAttribute="top" constant="460" id="gcu-Vr-zee"/>
+                        <constraint firstItem="2K5-FW-TRR" firstAttribute="leading" secondItem="wBB-E8-3us" secondAttribute="leading" id="p19-hP-O5t"/>
+                        <constraint firstAttribute="trailing" secondItem="2K5-FW-TRR" secondAttribute="trailing" id="xhr-4z-Hao"/>
+                        <constraint firstItem="Kv4-8K-QC6" firstAttribute="top" secondItem="wBB-E8-3us" secondAttribute="top" id="zAu-5a-xD8"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="75Q-K7-mAb"/>
+                            <exclude reference="BU0-aR-DrH"/>
+                            <exclude reference="Bwf-8O-umB"/>
+                            <exclude reference="Cqc-YZ-3xw"/>
+                            <exclude reference="XdM-fX-KVq"/>
+                            <exclude reference="zAu-5a-xD8"/>
+                            <exclude reference="IKa-IU-zkJ"/>
+                            <exclude reference="NLx-uQ-yxz"/>
+                            <exclude reference="U1s-jl-cgz"/>
+                            <exclude reference="ZqE-BX-Qwm"/>
+                            <exclude reference="gcu-Vr-zee"/>
+                            <exclude reference="xhr-4z-Hao"/>
+                        </mask>
+                    </variation>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wBB-E8-3us" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZIW-LX-a84"/>
+                <constraint firstItem="wBB-E8-3us" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bdJ-4m-F6C"/>
+                <constraint firstAttribute="bottom" secondItem="wBB-E8-3us" secondAttribute="bottom" id="j05-Hs-aiD"/>
+                <constraint firstAttribute="trailing" secondItem="wBB-E8-3us" secondAttribute="trailing" id="wod-OR-fg5"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="127" y="252"/>
         </view>

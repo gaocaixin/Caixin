@@ -12,9 +12,10 @@
 #import "MJExtension.h"
 #import "SubButten.h"
 
-#define BTN_WIDTH 145
-#define BTN_HEIGHT 50
+
 #define BTN_INTERVAL 10
+#define BTN_WIDTH (SCREEN_WIDTH - BTN_INTERVAL * 3)/2
+#define BTN_HEIGHT 50
 
 @interface SubscriptionSettingVC ()
 @property (weak, nonatomic) IBOutlet UILabel *recommendedLabel;
@@ -67,7 +68,7 @@
     self.myScrollerView.bounces = NO;
     //请求数据
     [self requestData];
-
+    
 }
 
 // 创建上面的btn

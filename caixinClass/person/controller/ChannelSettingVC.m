@@ -9,7 +9,10 @@
 #import "ChannelSettingVC.h"
 #import "ChannelBtn.h"
 
+
 #define BTN_INTERVAL 10
+#define BTN_WIDTH (SCREEN_WIDTH - BTN_INTERVAL * 3)/2
+#define BTN_HEIGHT 30
 
 @interface ChannelSettingVC ()
 @property (weak, nonatomic) IBOutlet UILabel *channelsLabel;
@@ -76,12 +79,12 @@
 - (void)createmyChannelsBtn
 {
     for (int i = 0; i < self.myChannels.count + self.channels.count; i ++ ) {
-        CGFloat W = CGW(self.lastBtn);
-        CGFloat H = CGH(self.lastBtn);
+        CGFloat W = BTN_WIDTH;
+        CGFloat H = BTN_HEIGHT;
         CGFloat X;
         CGFloat Y;
         if (i % 2 == 0) {
-            X = CGRectGetMaxX(self.lastBtn.frame) + BTN_INTERVAL;
+            X = BTN_WIDTH + 2*BTN_INTERVAL;
             Y = i/2 * (H + BTN_INTERVAL) + CGRectGetMinY(self.lastBtn.frame);
         } else {
             X = BTN_INTERVAL;
@@ -95,8 +98,8 @@
 - (void)createChannelsBtn
 {
     for (int i = 0; i < self.myChannels.count + self.channels.count; i ++ ) {
-        CGFloat W = CGW(self.lastBtn);
-        CGFloat H = CGH(self.lastBtn);
+        CGFloat W = BTN_WIDTH;
+        CGFloat H = BTN_HEIGHT;
         CGFloat X;
         CGFloat Y;
         if (i % 2 == 0) {
