@@ -13,6 +13,7 @@
 		BC00CA811AEB440300C8F419 /* EditTableVCellType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA7F1AEB440300C8F419 /* EditTableVCellType1.xib */; };
 		BC00CA851AEB6D2C00C8F419 /* EditTableVCellType3.m in Sources */ = {isa = PBXBuildFile; fileRef = BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */; };
 		BC00CA861AEB6D2C00C8F419 /* EditTableVCellType3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */; };
+		BC32C5661AF749EF00DE6D9F /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC32C5651AF749EF00DE6D9F /* SearchVC.m */; };
 		BC390DAC1AEBA92B0042348A /* SubscribeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DAB1AEBA92B0042348A /* SubscribeModel.m */; };
 		BC390DAF1AEBA9D00042348A /* SubscribeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DAE1AEBA9D00042348A /* SubscribeListModel.m */; };
 		BC390DB31AEBC5B00042348A /* EditTableVCellType8.m in Sources */ = {isa = PBXBuildFile; fileRef = BC390DB11AEBC5B00042348A /* EditTableVCellType8.m */; };
@@ -126,6 +127,8 @@
 		BC00CA821AEB6D2C00C8F419 /* EditTableVCellType3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType3.h; sourceTree = "<group>"; };
 		BC00CA831AEB6D2C00C8F419 /* EditTableVCellType3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType3.m; sourceTree = "<group>"; };
 		BC00CA841AEB6D2C00C8F419 /* EditTableVCellType3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType3.xib; sourceTree = "<group>"; };
+		BC32C5641AF749EF00DE6D9F /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		BC32C5651AF749EF00DE6D9F /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		BC390DAA1AEBA92B0042348A /* SubscribeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeModel.h; sourceTree = "<group>"; };
 		BC390DAB1AEBA92B0042348A /* SubscribeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeModel.m; sourceTree = "<group>"; };
 		BC390DAD1AEBA9D00042348A /* SubscribeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeListModel.h; sourceTree = "<group>"; };
@@ -736,6 +739,8 @@
 				BC51F66A1AEF12D000722200 /* SubscriptionSettingVC.h */,
 				BC51F66B1AEF12D000722200 /* SubscriptionSettingVC.m */,
 				BC51F66C1AEF12D000722200 /* SubscriptionSettingVC.xib */,
+				BC32C5641AF749EF00DE6D9F /* SearchVC.h */,
+				BC32C5651AF749EF00DE6D9F /* SearchVC.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -940,6 +945,7 @@
 				BC51F6711AEF1ABB00722200 /* SubListModel.m in Sources */,
 				BCFDF4D11AEB98A700283504 /* EditTableVCellType7.m in Sources */,
 				BC3D9AA91AE9F04000B8F306 /* AFSecurityPolicy.m in Sources */,
+				BC32C5661AF749EF00DE6D9F /* SearchVC.m in Sources */,
 				BC3D9AB31AE9F04000B8F306 /* MJIvar.m in Sources */,
 				BC390DB71AEBCD6F0042348A /* SubHeaderSectionView.m in Sources */,
 				BC6F05EE1AEDD00800E9FFAB /* LoginVC.m in Sources */,

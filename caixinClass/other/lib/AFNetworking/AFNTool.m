@@ -15,7 +15,7 @@
 + (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // 有block 调用
         if (success) {

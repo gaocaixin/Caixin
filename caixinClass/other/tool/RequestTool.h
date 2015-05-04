@@ -19,5 +19,7 @@
 // 请求订阅栏目
 + (void)requestSubListSuccess:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
++ (void)GET:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+
 
 @end

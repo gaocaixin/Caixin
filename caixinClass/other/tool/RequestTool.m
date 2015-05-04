@@ -46,7 +46,7 @@
 
 + (void)requestWithURL:(NSString *)urlStr isUpData:(BOOL)is Success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
-    NSLog(@"%@", urlStr);
+//    NSLog(@"%@", urlStr);
     NSFileManager *manager = [NSFileManager defaultManager];
     // 文件路径
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
@@ -98,5 +98,17 @@
 }
 
 
++ (void)GET:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
+{
+    [AFNTool GET:URLString parameters:parameters success:^(id responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 
 @end
