@@ -76,8 +76,10 @@
         [self addSubview:_statusLabel = [self labelWithFontSize:13]];
         
         // 4.箭头图片
-        UIImageView *arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kSrcName(@"arrow.png")]];
+        UIImageView *arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:kSrcName(ARROW_IMAGE)]];
+//        UIImageView *arrowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blueArrow"]];
         arrowImage.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        arrowImage.bounds = CGRectMake(0, 0, 15, 40);
         [self addSubview:_arrowImage = arrowImage];
         
         // 5.指示器

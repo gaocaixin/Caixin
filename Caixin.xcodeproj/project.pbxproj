@@ -90,6 +90,7 @@
 		BC6F05FF1AEE24EE00E9FFAB /* ChannelSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F05FD1AEE24EE00E9FFAB /* ChannelSettingVC.m */; };
 		BC6F06001AEE24EE00E9FFAB /* ChannelSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6F05FE1AEE24EE00E9FFAB /* ChannelSettingVC.xib */; };
 		BC6F06031AEE363600E9FFAB /* ChannelBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6F06021AEE363600E9FFAB /* ChannelBtn.m */; };
+		BCF88C191AF703FB00F4230E /* SubscribeListHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF88C181AF703FB00F4230E /* SubscribeListHeaderVC.m */; };
 		BCFDF4BA1AEB7EE700283504 /* EditTableVCellType6.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */; };
 		BCFDF4BB1AEB7EE700283504 /* EditTableVCellType6.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */; };
 		BCFDF4BE1AEB7F7C00283504 /* EditTableVCellType.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFDF4BD1AEB7F7C00283504 /* EditTableVCellType.m */; };
@@ -276,6 +277,8 @@
 		BC6F05FE1AEE24EE00E9FFAB /* ChannelSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelSettingVC.xib; sourceTree = "<group>"; };
 		BC6F06011AEE363600E9FFAB /* ChannelBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelBtn.h; sourceTree = "<group>"; };
 		BC6F06021AEE363600E9FFAB /* ChannelBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelBtn.m; sourceTree = "<group>"; };
+		BCF88C171AF703FB00F4230E /* SubscribeListHeaderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeListHeaderVC.h; sourceTree = "<group>"; };
+		BCF88C181AF703FB00F4230E /* SubscribeListHeaderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeListHeaderVC.m; sourceTree = "<group>"; };
 		BCFDF4B71AEB7EE700283504 /* EditTableVCellType6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableVCellType6.h; sourceTree = "<group>"; };
 		BCFDF4B81AEB7EE700283504 /* EditTableVCellType6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableVCellType6.m; sourceTree = "<group>"; };
 		BCFDF4B91AEB7EE700283504 /* EditTableVCellType6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTableVCellType6.xib; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 				BC3D9AD51AE9F0AF00B8F306 /* HomeViewC.m */,
 				BCFDF4D31AEBA30400283504 /* DescVC.h */,
 				BCFDF4D41AEBA30400283504 /* DescVC.m */,
+				BCF88C171AF703FB00F4230E /* SubscribeListHeaderVC.h */,
+				BCF88C181AF703FB00F4230E /* SubscribeListHeaderVC.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -961,6 +966,7 @@
 				BC3D9AA71AE9F04000B8F306 /* AFNetworkReachabilityManager.m in Sources */,
 				BC6F05F31AEDD94100E9FFAB /* SettingVC.m in Sources */,
 				BC55AA5C1AECA01200E9D338 /* Animation.m in Sources */,
+				BCF88C191AF703FB00F4230E /* SubscribeListHeaderVC.m in Sources */,
 				BC3D9ABC1AE9F04000B8F306 /* MJRefreshBaseView.m in Sources */,
 				BC3D9AE01AEA321700B8F306 /* TitleButten.m in Sources */,
 				BC3D9A091AE9EF9600B8F306 /* main.m in Sources */,

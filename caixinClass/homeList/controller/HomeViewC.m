@@ -27,6 +27,7 @@
 #import "Animation.h"
 #import "PersonVC.h"
 #import "MJRefresh.h"
+#import "SubscribeListHeaderVC.h"
 
 #define CHANNLE_BTN_INTERVAL 10
 #define TITLEVIEW_HEIGHT 30
@@ -36,7 +37,7 @@
 #define TITLE_SUBSCRIBE @"我的订阅"
 #define TITLE_LAEST @"最新文章"
 
-@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MJRefreshBaseViewDelegate>
+@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MJRefreshBaseViewDelegate, SubHeaderSectionViewDelegate>
 
 // 频道滚动视图
 @property (nonatomic ,strong) UIScrollView *titleScrollView;
@@ -353,6 +354,7 @@
 {
     if (tableView == self.tabelViewArray[1]) {
         SubHeaderSectionView *view = [SubHeaderSectionView subHeaderSectionView];
+        view.delegate = self;
         view.model = self.tableViewDataArray[1][section];
         return view;
     }
@@ -453,7 +455,7 @@
 
 }
 // 创建频道Btn
-- (void)createTitleBtnWithTitle:(NSString *)title tag:(int)tag urlStr:(NSString *)urlStr
+- (void)createTitleBtnWithTitle:(NSString *)title tag:(long)tag urlStr:(NSString *)urlStr
 {
     TitleButten *btn = [[TitleButten alloc] init];
     // 计算btn的宽度
@@ -520,7 +522,7 @@
     [self requestTableViewDataWithTag:btn.tag];
 }
 
-- (void)requestTableViewDataWithTag:(int)tag
+- (void)requestTableViewDataWithTag:(long)tag
 {
     // 请求btn数据
     TitleButten *curBtn = self.titleBtnArray[tag];
@@ -553,7 +555,7 @@
 }
 
 // 请求数据
-- (void)requesttTableViewDataWithStr:(NSString *)url tag:(int)tag isUpData:(int)is success:(void (^)())success failure:(void (^)())failure
+- (void)requesttTableViewDataWithStr:(NSString *)url tag:(long)tag isUpData:(int)is success:(void (^)())success failure:(void (^)())failure
 {
     // 解析数据
     [RequestTool requestWithURL:url isUpData:is Success:^(id responseObject) {
@@ -708,6 +710,15 @@
         }];
     }
     
+}
+
+
+#pragma mark - SubHeaderSectionViewDelegate
+- (void)subHeaderSectionView:(SubHeaderSectionView *)view titleButtenClicked:(UIButton *)btn
+{
+    SubscribeListHeaderVC *vc = [[SubscribeListHeaderVC alloc] init];
+    vc.model = view.model;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

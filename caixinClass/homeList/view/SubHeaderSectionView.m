@@ -33,6 +33,8 @@
 }
 
 - (IBAction)arrorBtn:(UIButton *)sender {
-    NSLog(@"%@", self.model.ID);
+    if ([self.delegate respondsToSelector:@selector(subHeaderSectionView:titleButtenClicked:)])  {
+        [self.delegate subHeaderSectionView:self titleButtenClicked:sender];
+    }
 }
 @end

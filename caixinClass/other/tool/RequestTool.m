@@ -78,6 +78,7 @@
                 success(json);
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            CXLog(@"%@", error);
             if (failure) {
                 failure(error);
             }
@@ -95,5 +96,7 @@
     }
 
 }
+
+
 
 @end

@@ -12,8 +12,10 @@
 #import "SettingVC.h"
 #import "ChannelSettingVC.h"
 #import "SubscriptionSettingVC.h"
+#import "MBProgressHUD+MJ.h"
+#import "RequestTool.h"
 
-@interface PersonVC ()
+@interface PersonVC ()<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *userBtn;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -104,7 +106,60 @@
 }
 
 - (IBAction)loadBtnClicked:(UIButton *)sender {
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"缓存下载" message:@"即将下载最新的115篇缓存数据" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [view show];
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        CGFloat H = 10;
+        CGFloat W = CGW(self.view);
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, CGH(self.view) - H, W, H)];
+        bgView.backgroundColor = [UIColor grayColor];
+        [self.view.window addSubview:bgView];
+        
+        UIView *pressView = [[UIView alloc] initWithFrame:CGRectMake(0, CGH(self.view) - H, 0, H)];
+        pressView.backgroundColor = [UIColor redColor];
+        [self.view.window addSubview:pressView];
+        
+        NSArray * arr = @[@"http://mappv4.caixin.com/index_page_v4/index_page_1.json",
+                          @"http://mappv4.caixin.com/subscribe_article_list/index.json",
+                          @"http://mappv4.caixin.com/channel/list_lastnew_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_8_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_11_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_7_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_6_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_5_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_2_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_1_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_150_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_10_20_1.json",
+                          @"http://mappv4.caixin.com/channel/list_3_20_1.json"];
+        __block int i = 1;
+        for (NSString *url in arr) {
+            
+            [RequestTool requestWithURL:url isUpData:YES Success:^(id responseObject) {
+                
+                CGRect rect = pressView.frame;
+                rect.size.width = i * W / arr.count;
+                pressView.frame = rect;
+                i++;
+                if (i == arr.count) {
+                    [pressView removeFromSuperview];
+                    [bgView removeFromSuperview];
+                    [MBProgressHUD showSuccess:@"缓存完成"];
+                }
+                
+            } failure:^(NSError *error) {
+                CGRect rect = pressView.frame;
+                rect.size.width = i * W / arr.count;
+                pressView.frame = rect;
+            }];
+        }
+    }
+    
+}
+
 
 - (IBAction)clearBtnClicked:(UIButton *)sender {
     // 清除缓存
