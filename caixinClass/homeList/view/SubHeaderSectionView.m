@@ -29,7 +29,7 @@
 {
     _model = model;
     self.titleLabel.text = model.title;
-    [self.titleImage sd_setImageWithURL:[NSURL URLWithString:model.icon_url] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    [self.titleImage sd_setImageWithURL:[NSURL URLWithString:model.icon_url] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
 }
 
 - (IBAction)arrorBtn:(UIButton *)sender {

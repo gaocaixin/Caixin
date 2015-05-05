@@ -167,6 +167,7 @@
         // 初始化
         [self.tableViewDataArray removeAllObjects];
         self.curPage = 1;
+        [self.view endEditing:YES];
         [self requestDataSuccess:nil failure:nil];
     }
 }
@@ -202,14 +203,14 @@
     }];
 }
 
-#pragma mark - 崩溃BUG
+
 - (void)reloadDataWithURL:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)())success failure:(void (^)())failure
 {
     [RequestTool GET:url parameters:parameters success:^(id responseObject) {
-        
+        NSLog(@"%@", url);
         NSLog(@"%@", responseObject);
         
-        if (responseObject[@"sum"] == 0) {
+        if ([responseObject[@"data"] count] == 0) {
             [MBProgressHUD showError:@"没有搜索到数据"];
             return;
         }
@@ -244,7 +245,7 @@
 - (void)creteTableView
 {
     // 创建tableview
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, HEIGHT_NAV + HEIGHT_STA+SEARCH_HEIGHT, CGW(self.view), CGH(self.view)-SEARCH_HEIGHT) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, HEIGHT_NAV + HEIGHT_STA+SEARCH_HEIGHT, CGW(self.view), CGH(self.view)-(HEIGHT_NAV + HEIGHT_STA+SEARCH_HEIGHT)) style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.sectionHeaderHeight = 0;

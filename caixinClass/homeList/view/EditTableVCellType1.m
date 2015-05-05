@@ -38,7 +38,7 @@
     [super setModel:model];
     
     EditListModel *listModel = [model.listArr lastObject];
-    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
     self.titleLabel.text = listModel.title;
     
     self.photosImageView.hidden = ([listModel.article_type intValue] != 3);

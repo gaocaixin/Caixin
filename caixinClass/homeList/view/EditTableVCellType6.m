@@ -36,7 +36,7 @@
     
     [super setModel:model];
     EditListModel *listModel = [model.listArr lastObject];
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
     self.titleLabel.text = listModel.title;
     self.commentLabel.text = listModel.comment;
     [self hiddenImage:listModel.article_type];
@@ -47,7 +47,7 @@
     [super setSubscribeListModel:subscribeListModel];
     
     self.timeLabel.text = [subscribeListModel.create_time toTime];
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:subscribeListModel.picture_url] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:subscribeListModel.picture_url] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
     self.commentLabel.text = subscribeListModel.comment_count;
     self.titleLabel.text = subscribeListModel.title;
     

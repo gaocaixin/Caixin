@@ -28,6 +28,8 @@
 #import "PersonVC.h"
 #import "MJRefresh.h"
 #import "SubscribeListHeaderVC.h"
+#import "SearchVC.h"
+#import "MBProgressHUD+MJ.h"
 
 #define CHANNLE_BTN_INTERVAL 10
 #define TITLEVIEW_HEIGHT 30
@@ -37,7 +39,7 @@
 #define TITLE_SUBSCRIBE @"我的订阅"
 #define TITLE_LAEST @"最新文章"
 
-@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MJRefreshBaseViewDelegate, SubHeaderSectionViewDelegate>
+@interface HomeViewC () <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MJRefreshBaseViewDelegate, SubHeaderSectionViewDelegate, UIAlertViewDelegate, EditTableVCellType5Delegate>
 
 // 频道滚动视图
 @property (nonatomic ,strong) UIScrollView *titleScrollView;
@@ -53,6 +55,8 @@
 
 // tableView数据源
 @property (nonatomic ,strong) NSMutableArray *tableViewDataArray;
+
+@property (nonatomic ,weak) UIView *categoryView;
 @end
 
 @implementation HomeViewC
@@ -86,14 +90,16 @@
 
 - (void)setUpNav
 {
-    // 左边财新网图片
+    // 左边网图片
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    imageView.image = [UIImage imageNamed:@"ncxcaixin_logo"];
+    imageView.image = [UIImage imageNamed:@"resize_png_new.php"];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.layer.cornerRadius = CGW(imageView)/2 + 5;
+    imageView.layer.masksToBounds =YES;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:imageView];
     // 右边个人信息
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setImage:[UIImage imageNamed:@"icon_setting_user"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"webArticle_share"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(userBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
@@ -102,13 +108,179 @@
 // 跳到个人页面
 - (void)userBtnClicked:(UIButton *)btn
 {
-    // 添加动画
+    if (self.categoryView) {
+        return;
+    }
+
+    NSArray *arr = @[@"清除缓存", @"缓存下载", @"搜索"];
+    
+    CGFloat Wpianyi = 30;
+    CGFloat Ypianyi = 10;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(btn.frame)-Wpianyi/2, CGRectGetMaxY(btn.frame)+Ypianyi, CGW(btn)+Wpianyi, CGH(btn) * arr.count)];
+    view.backgroundColor = [UIColor colorWithWhite:200/255.0 alpha:0.2];
+    view.layer.cornerRadius = 5;
+    view.layer.masksToBounds = YES;
+    self.categoryView = view;
+    [self.view.window addSubview:view];
+    
+    
+    CGFloat W = CGW(btn)+Wpianyi;
+    CGFloat H = CGH(btn);
+    CGFloat X = 0;
+    for (int i = 0; i < arr.count; i++) {
+        UIButton *btn = [self createCategoryBtnWithFrame:CGRectMake(X, H*i, W, H) title:arr[i]];
+        btn.tag = i;
+        [view addSubview:btn];
+        [btn addTarget:self action:@selector(categoryViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+// 分类view的btn点击
+- (void)categoryViewBtn:(UIButton *)btn
+{
+    switch (btn.tag) {
+        case 0:
+            [self claearTash];
+            break;
+        case 1:
+            [self loadAllData];
+            break;
+        case 2:
+            [self searchBtn];
+            break;
+        default:
+            break;
+    }
+    [self.categoryView removeFromSuperview];
+}
+
+- (void)searchBtn
+{
+// 添加动画
     [self.navigationController.view.layer addAnimation:[Animation kCATransitionPushFromTop] forKey:nil];
-    PersonVC *view = [[PersonVC alloc] init];
+    SearchVC *view = [[SearchVC alloc] init];
     [self.navigationController pushViewController:view animated:YES];
     [view.navigationController.navigationBar.subviews[0] setHidden:YES];
+}
+
+- (void)loadAllData
+{
+    
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"缓存下载" message:@"即将下载最新的115篇缓存数据" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    view.tag = 1;
+    [view show];
+}
+// alertView代理
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            CGFloat H = 10;
+            CGFloat W = CGW(self.view);
+            UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, CGH(self.view) - H, W, H)];
+            bgView.backgroundColor = [UIColor grayColor];
+            [self.view.window addSubview:bgView];
+            
+            UIView *pressView = [[UIView alloc] initWithFrame:CGRectMake(0, CGH(self.view) - H, 0, H)];
+            pressView.backgroundColor = [UIColor redColor];
+            [self.view.window addSubview:pressView];
+            
+            NSArray * arr = @[@"http://mappv4.caixin.com/index_page_v4/index_page_1.json",
+                              @"http://mappv4.caixin.com/subscribe_article_list/index.json",
+                              @"http://mappv4.caixin.com/channel/list_lastnew_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_8_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_11_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_7_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_6_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_5_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_2_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_1_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_150_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_10_20_1.json",
+                              @"http://mappv4.caixin.com/channel/list_3_20_1.json"];
+            __block int i = 1;
+            for (NSString *url in arr) {
+                
+                [RequestTool requestWithURL:url isUpData:YES Success:^(id responseObject) {
+                    
+                    CGRect rect = pressView.frame;
+                    rect.size.width = i * W / arr.count;
+                    pressView.frame = rect;
+                    i++;
+                    if (i == arr.count) {
+                        [pressView removeFromSuperview];
+                        [bgView removeFromSuperview];
+                        [MBProgressHUD showSuccess:@"缓存完成"];
+                    }
+                    
+                } failure:^(NSError *error) {
+                    CGRect rect = pressView.frame;
+                    rect.size.width = i * W / arr.count;
+                    pressView.frame = rect;
+                }];
+            }
+        }
+
+    } else if (alertView.tag == 0) {
+        if (buttonIndex == 1) {
+            // 清除缓存
+            NSFileManager *mgr = [NSFileManager defaultManager];
+            // 主cache路径
+            NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+            
+            NSArray *subArr = [mgr subpathsAtPath:cachePath];
+            // 找到所有文件和文件夹
+            for (NSString *subPath in subArr) {
+                // 拼接全路径
+                NSString *fullPath = [cachePath stringByAppendingPathComponent:subPath];
+                [mgr removeItemAtPath:fullPath error:nil];
+            }
+            
+            [MBProgressHUD showSuccess:[NSString stringWithFormat:@"所有缓冲清空啦"]];
+        }
+
+    }
     
 }
+
+
+- (void)claearTash
+{
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    //    NSLog(@"%@", cachePath);
+    // 获得缓存文件总大小
+    // 获得所有的子路径
+    NSArray *subArr = [mgr subpathsAtPath:cachePath];
+    long long size = 0;
+    for (NSString *subPath in subArr) {
+        NSString *fullPath = [cachePath stringByAppendingPathComponent:subPath];
+        BOOL dir = NO;
+        [mgr fileExistsAtPath:fullPath isDirectory:&dir];
+        if (dir == 0) {
+            size += [[mgr attributesOfItemAtPath:fullPath error:nil][NSFileSize] longLongValue];
+        }
+    }
+    CGFloat sizeMB = size/1000/1000.0;
+    NSString *message = [NSString stringWithFormat:@"共有%.2fMB", sizeMB];
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"清除缓存" message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    view.tag = 0;
+    [view show];
+    
+}
+
+
+
+- (UIButton *)createCategoryBtnWithFrame:(CGRect)frame title:(NSString *)title
+{
+    UIButton *categoryBtn = [[UIButton alloc] initWithFrame:frame];
+    [categoryBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [categoryBtn setTitle:title forState:UIControlStateNormal];
+    [categoryBtn setBackgroundColor:CXColorP(0, 0, 0, 0.5)];
+    categoryBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    return categoryBtn;
+}
+
 
 #pragma mark - 频道下方list滚动栏
 
@@ -253,6 +425,7 @@
             case 5:
             {
                 EditTableVCellType5 *cell = [EditTableVCellType5 editTableVCell:tableView];
+                cell.delegate = self;
                 cell.model = model;
                 return cell;
             }
@@ -364,7 +537,11 @@
 {
     if (tableView == self.tabelViewArray[0]) {
         EditModel *model = self.tableViewDataArray[0][indexPath.section];
-        EditListModel *listModel = [model.listArr lastObject];
+         EditListModel *listModel = [model.listArr lastObject];
+        
+        if (model.listArr.count > 1) {
+            listModel = [model.listArr firstObject];
+        }
         DescVC *desc =  [[DescVC alloc] init];
         desc.listModel = listModel;
         [self.navigationController pushViewController:desc animated:YES];
@@ -387,6 +564,8 @@
         }
     }
 }
+
+
 
 #pragma mark - 频道栏
 
@@ -659,11 +838,6 @@
 }
 
 #pragma mark - scrollView代理
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView == self.listScrollView) {
@@ -710,6 +884,14 @@
         }];
     }
     
+}
+
+#pragma mark - editcell5Delegate
+- (void)editTableVCellType5ButtenClicked:(EditListModel *)model
+{
+    DescVC *desc =  [[DescVC alloc] init];
+    desc.listModel = model;
+    [self.navigationController pushViewController:desc animated:YES];
 }
 
 

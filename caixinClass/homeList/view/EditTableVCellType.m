@@ -17,6 +17,7 @@
 //    rect.size.width = SCREEN_WIDTH;
 //    self.frame = rect;
 //    self.backgroundColor = [UIColor redColor];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -65,15 +65,8 @@
     for (int i = 0; i < ImageCount; i++) {
         NSString *imageName;
         
-        if ([[Tool deviceString] isEqualToString:@"iPhone 4"]) {
-            imageName = [NSString stringWithFormat:@"ip4-%d", i+1];
-        } else if ([[Tool deviceString] isEqualToString:@"iPhone4,1"]) {
-            imageName = [NSString stringWithFormat:@"iphone4s-%d", i+1];
-        } else if ([[Tool deviceString] isEqualToString:@"iPhone5,2"]) {
-             imageName = [NSString stringWithFormat:@"5S开机引导-%d", i+1];
-        } else{
-            imageName = [NSString stringWithFormat:@"5S开机引导-%d", i+1];
-        }
+        imageName = [NSString stringWithFormat:@"5S开机引导-%d", i+1];
+        
 //        // 设置4英寸的图片 -568h图片只在lunch里匹配 再其他文件中需要手写匹配 并且把图片拽出images
 //        if ([UIScreen mainScreen].bounds.size.height == 568) {
 //            imageName = [imageName stringByAppendingString:@"-568h@2x.png"];

@@ -40,6 +40,10 @@
 #define kScreenWidth [[UIScreen mainScreen]bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen]bounds].size.height
 
-#define CXColor(a,b,c) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:1]
+#define CXColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define CXColorP(r,g,b,p) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:p/1]
 
+#define TEXT_SIZE @"textSize"
+#define LOADIMAGE @"loadImageSwitch"
+#define PUSH_SWITCH @"pushSwitch"
 #endif

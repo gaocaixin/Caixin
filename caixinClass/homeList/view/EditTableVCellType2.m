@@ -34,13 +34,13 @@
     [super setModel:model];
     EditListModel *listModel = [model.listArr lastObject];
     
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:listModel.image] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
     self.titleLabel.text = listModel.title;
     self.commentLabel.text = listModel.comment;
     
     if (listModel.tag_image.length > 0) {
         [self.futuImageView setHidden:NO];
-        [self.futuImageView sd_setImageWithURL:[NSURL URLWithString:listModel.tag_image] placeholderImage:[UIImage imageNamed:@"pic_default"]];
+        [self.futuImageView sd_setImageWithURL:[NSURL URLWithString:listModel.tag_image] placeholderImage:[UIImage imageNamed:@"pic_loaderror"]];
         
         //        CGRect rect = self.titleLabel.frame;
         //        rect.origin.x = 30;

@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "EditTableVCellType.h"
 
+@protocol EditTableVCellType5Delegate <NSObject>
+
+- (void)editTableVCellType5ButtenClicked:(EditListModel *)model;
+
+@end
+
 @interface EditTableVCellType5 : EditTableVCellType
+
+@property (nonatomic ,weak) id<EditTableVCellType5Delegate> delegate;
 
 @end
