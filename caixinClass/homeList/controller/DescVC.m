@@ -71,7 +71,9 @@
 {
     _subListModel = subListModel;
     self.url = subListModel.web_article_url;
-    
+    if (subListModel.web_article_url.length < 1) {
+        self.url = [NSString stringWithFormat:@"http://mappv4.caixin.com/article/%@.html?fontsize=1", subListModel.ID];
+    }
     self.title = subListModel.title;
 }
 

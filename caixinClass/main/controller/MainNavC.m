@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:14]};
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

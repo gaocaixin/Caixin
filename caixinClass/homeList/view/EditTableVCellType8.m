@@ -21,9 +21,9 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.leftImageView.layer.cornerRadius = CGW(self.leftImageView)/2;
     self.leftImageView.layer.masksToBounds = YES;
-    
 }
 
 + (instancetype)editTableVCell:(UITableView *)tableView

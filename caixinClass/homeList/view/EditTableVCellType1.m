@@ -18,10 +18,6 @@
 
 @implementation EditTableVCellType1
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
 
 + (instancetype)editTableVCell:(UITableView *)tableView
 {

@@ -112,7 +112,7 @@
         return;
     }
 
-    NSArray *arr = @[@"清除缓存", @"缓存下载", @"搜索"];
+    NSArray *arr = @[@"清除缓存", @"缓存下载", @"搜索", @"取消"];
     
     CGFloat Wpianyi = 30;
     CGFloat Ypianyi = 10;
@@ -549,11 +549,11 @@
     else if (tableView == self.tabelViewArray[1]) {
         SubscribeModel *model = self.tableViewDataArray[1][indexPath.section];
         SubscribeListModel *listModel = model.listArr[indexPath.row];
-        if (listModel.web_article_url.length > 0) {
-            DescVC *desc =  [[DescVC alloc] init];
-            desc.subListModel = listModel;
-            [self.navigationController pushViewController:desc animated:YES];
-        }
+        
+        DescVC *desc =  [[DescVC alloc] init];
+        desc.subListModel = listModel;
+        [self.navigationController pushViewController:desc animated:YES];
+        
     }
     else  {
         SubscribeListModel *listModel = self.tableViewDataArray[tableView.tag][indexPath.section];
