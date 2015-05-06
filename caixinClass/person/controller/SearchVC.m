@@ -53,6 +53,13 @@
     [self setUp];
 //    [self createCatagoryView];
     [self creteTableView];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
+    label.text = @"搜索";
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.textColor = [UIColor blackColor];
+    self.navigationItem.titleView = label;
+    
 }
 /**
  创建分类view
@@ -121,10 +128,14 @@
 // 分类btn点击
 - (void)categoryBtn:(UIButton *)btn
 {
+    if (self.categoryView) {
+        [self.categoryView removeFromSuperview];
+        return;
+    }
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.categoryBtn.frame), CGRectGetMaxY(self.categoryBtn.frame), CGW(self.categoryBtn), CGH(self.categoryBtn) * 4)];
     view.backgroundColor = [UIColor blackColor];
     self.categoryView = view;
-    [self.view.window addSubview:view];
+    [self.view addSubview:view];
     
     NSArray *arr = @[@"全部", @"图片", @"视频", @"博客"];
     CGFloat W = CGW(self.categoryBtn);

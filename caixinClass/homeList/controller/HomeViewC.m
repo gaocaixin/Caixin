@@ -103,12 +103,18 @@
     [btn addTarget:self action:@selector(userBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    label.text = @"全球新闻";
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.textColor = [UIColor blackColor];
+    self.navigationItem.titleView = label;
 }
 
 // 跳到个人页面
 - (void)userBtnClicked:(UIButton *)btn
 {
     if (self.categoryView) {
+        [self.categoryView removeFromSuperview];
         return;
     }
 
@@ -116,12 +122,12 @@
     
     CGFloat Wpianyi = 30;
     CGFloat Ypianyi = 10;
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(btn.frame)-Wpianyi/2, CGRectGetMaxY(btn.frame)+Ypianyi, CGW(btn)+Wpianyi, CGH(btn) * arr.count)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(btn.frame)-Wpianyi/2, CGRectGetMaxY(btn.frame)+Ypianyi*2, CGW(btn)+Wpianyi, CGH(btn) * arr.count)];
     view.backgroundColor = [UIColor colorWithWhite:200/255.0 alpha:0.2];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = YES;
     self.categoryView = view;
-    [self.view.window addSubview:view];
+    [self.view addSubview:view];
     
     
     CGFloat W = CGW(btn)+Wpianyi;
